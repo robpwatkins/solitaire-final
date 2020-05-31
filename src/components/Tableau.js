@@ -17,7 +17,7 @@ const Tableau = (props) => {
   //   setCardPosition(cards.length - 1);
   // }, [cards.length]);
 
-  console.log(cards, cardPosition);
+  // console.log(cards, cardPosition);
   return (
     <div className="tableau">
       {cards.map((card, index) => {

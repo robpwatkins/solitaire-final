@@ -7,7 +7,7 @@ import Tableau from './Tableau';
 
 const Solitaire = (props) => {
   const [deck, setDeck] = useState([]);
-  const [isOrigin, setIsOrigin] = useState(false);
+  // const [isOrigin, setIsOrigin] = useState(false);
   const playCards = useRef([]);
 
   useEffect(() => {

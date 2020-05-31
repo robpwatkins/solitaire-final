@@ -1,16 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Suit from './Suit';
 
 const Card = (props) => {
-  const [isOrigin, setIsOrigin] = useState(false);
-  const [originCard, setOriginCard] = useState([]);
-  const [destinationCard, setDestinationCard] = useState(null);
+  // const [isOrigin, setIsOrigin] = useState(false);
+  // const [originCard, setOriginCard] = useState([]);
+  // const [destinationCard, setDestinationCard] = useState(null);
   const {
     rank,
     suit,
     index,
     name,
-    pile,
     cards,
     playCards
   } = props;
@@ -58,7 +57,6 @@ const Card = (props) => {
       onClick={handleClick}
       data-rank={rank}
       data-suit={suit}
-      onClick={handleClick}
     >
       <div className="rank-top">
         <div className="rank-suit">
