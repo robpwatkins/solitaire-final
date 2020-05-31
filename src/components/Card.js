@@ -24,21 +24,6 @@ const Card = (props) => {
     }
   }
 
-  // const handleClick = (event, data) => {
-  //   if (!isOrigin) {
-  //     setOriginCard({
-  //       rank: rank,
-  //       suit: suit
-  //     });
-  //     setIsOrigin(true);
-  //   } else {
-  //     // setDestinationCard({
-  //     //   rank: event.currentTarget.dataset.rank,
-  //     //   suit: event.currentTarget.dataset.suit
-  //     // });
-  //   }
-  // }
-  // console.log(originCard, destinationCard);
   let cardClass = [
     'card',
     ((suit === 'Diamonds') || (suit === 'Hearts')) && 'red',
@@ -47,7 +32,6 @@ const Card = (props) => {
     (name && name.includes('top')) && 'top',
     (name && name.includes('bottom')) && 'bottom'
   ];
-  
   cardClass = cardClass.join(' ');
   // console.log(rank, suit);
   return (

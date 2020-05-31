@@ -6,20 +6,23 @@ import Stack from './Stack';
 const Tableau = (props) => {
   const [cards, setCards] = useState([]);
   const [cardPosition, setCardPosition] = useState(null);
-  const { count, deck, playCards, handleClick } = props;
+  const { count, deck, playCards } = props;
   
   useEffect(() => {
     setCards(dealCards(count, deck));
     setCardPosition(cards.length - 1)
   }, [count, deck, cards.length])
 
-  // useEffect(() => {
-  //   setCardPosition(cards.length - 1);
-  // }, [cards.length]);
+  const handleClick = event => {
+    props.handleClick(event);
+    if (playCards.current.length > 0) {
+      playCards.current = [];
+    }
+  }
 
   // console.log(cards, cardPosition);
   return (
-    <div className="tableau">
+    <div className="tableau" onClick={handleClick}>
       {cards.map((card, index) => {
         if (index >= cardPosition) {
           return (
@@ -28,7 +31,7 @@ const Tableau = (props) => {
               key={index} 
               index={index}
               name={index === cardPosition ? "tableau top" : index > cardPosition && "tableau bottom"}
-              handleClick={handleClick}
+              handleClick={props.handleClick}
               playCards={playCards}
               cards={cards}
             />

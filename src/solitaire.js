@@ -1,5 +1,4 @@
 export const solitaire = (destination, originCard, destinationCard) => {
-  console.log(destination);
   if (destination === 'foundation-empty') {
     if (originCard.rank === 'A') return true;
     else return false;

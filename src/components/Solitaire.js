@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { deckBuilder } from '../deckBuilder';
 import { solitaire } from '../solitaire';
+import { setDestination } from '../setDestination';
 import Stock from './Stock';
 import Foundation from './Foundation';
 import Tableau from './Tableau';
@@ -16,22 +17,7 @@ const Solitaire = (props) => {
 
   const handleClick = event => {
     if (playCards.current.length > 0) {
-      let destination;
-      if (event.currentTarget.getAttribute('class').includes('foundation' && 'empty')) {
-        destination = 'foundation-empty';
-      } else {
-        if (event.currentTarget.getAttribute('class').includes('tableau' && 'empty')) {
-          destination = 'tableau-empty';
-        } else {
-          if (event.currentTarget.getAttribute('class').includes('foundation')) {
-            destination = 'foundation';
-          } else {
-            if (event.currentTarget.getAttribute('class').includes('tableau')) {
-              destination = 'tableau';
-            }
-          }
-        }
-      }
+      let destination = setDestination(event.currentTarget.getAttribute('class'));
       let originCard = playCards.current[0];
       let destinationCard = {
         rank: event.currentTarget.dataset.rank,
@@ -39,10 +25,8 @@ const Solitaire = (props) => {
       }
       if (solitaire(destination, originCard, destinationCard)) {
         console.log('heyoo');
-        // playCards.current = [];
       } else {
         console.log('narp');
-        // playCards.current = [];
       }
     }
   }
@@ -50,10 +34,10 @@ const Solitaire = (props) => {
   return (
     <div className="solitaire">
       <Stock count={24} deck={deck} />
-      <Foundation handleClick={handleClick} />
-      <Foundation handleClick={handleClick} />
-      <Foundation handleClick={handleClick} />
-      <Foundation handleClick={handleClick} />
+      <Foundation playCards={playCards} handleClick={handleClick} />
+      <Foundation playCards={playCards} handleClick={handleClick} />
+      <Foundation playCards={playCards} handleClick={handleClick} />
+      <Foundation playCards={playCards} handleClick={handleClick} />
       <Tableau count={1} deck={deck} playCards={playCards} handleClick={handleClick} />
       <Tableau count={2} deck={deck} playCards={playCards} handleClick={handleClick} />
       <Tableau count={3} deck={deck} playCards={playCards} handleClick={handleClick} />

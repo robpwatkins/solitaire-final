@@ -2,7 +2,14 @@ import React, { useState } from 'react';
 
 const Foundation = (props) => {
   const [cards, /* setCards */] = useState([]);
-  const { handleClick } = props;
+  const { playCards } = props;
+
+  const handleClick = event => {
+    props.handleClick(event);
+    if (playCards.current.length > 0) {
+      playCards.current = [];
+    }
+  }
 
   let fndClass = [
     'foundation',
