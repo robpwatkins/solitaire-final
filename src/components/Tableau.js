@@ -6,7 +6,7 @@ import Stack from './Stack';
 const Tableau = (props) => {
   const [cards, setCards] = useState([]);
   const [cardPosition, setCardPosition] = useState(null);
-  const { count, deck } = props;
+  const { count, deck, playCards, handleClick } = props;
   
   useEffect(() => {
     setCards(dealCards(count, deck));
@@ -28,7 +28,9 @@ const Tableau = (props) => {
               key={index} 
               index={index}
               name={index === cardPosition ? "tableau top" : index > cardPosition && "tableau bottom"}
-              handleClick={props.handleClick}
+              handleClick={handleClick}
+              playCards={playCards}
+              cards={cards}
             />
           )
         } else {

@@ -9,8 +9,19 @@ const Card = (props) => {
     rank,
     suit,
     index,
-    name
+    name,
+    pile,
+    cards,
+    playCards
   } = props;
+
+  const handleClick = (event) => {
+    props.handleClick(event);
+    if (playCards.current.length === 0) {
+      let newCards = cards.slice();
+        playCards.current = newCards.splice(index);
+    } else return;
+  }
 
   // const handleClick = (event, data) => {
   //   if (!isOrigin) {
@@ -42,9 +53,10 @@ const Card = (props) => {
     <div 
       className={cardClass} 
       value={index} 
-      onClick={props.handleClick}
+      onClick={handleClick}
       data-rank={rank}
       data-suit={suit}
+      onClick={handleClick}
     >
       <div className="rank-top">
         <div className="rank-suit">

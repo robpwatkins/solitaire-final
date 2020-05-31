@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 
-const Foundation = () => {
+const Foundation = (props) => {
   const [cards, /* setCards */] = useState([]);
+  const { handleClick } = props;
 
   let fndClass = [
     'foundation',
@@ -10,7 +11,7 @@ const Foundation = () => {
   ]
   fndClass = fndClass.join(' ');
   return (
-    <div className={fndClass}>
+    <div className={fndClass} onClick={handleClick}>
       
     </div>
   )
