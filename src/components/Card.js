@@ -11,10 +11,11 @@ const Card = (props) => {
     index,
     name,
     cards,
-    playCards
+    playCards,
+    setPlayCards
   } = props;
 
-  const handleClick = (event) => {
+  const handleClick = event => {
     props.handleClick(event);
   }
 
@@ -27,7 +28,7 @@ const Card = (props) => {
     (name && name.includes('bottom')) && 'bottom'
   ];
   cardClass = cardClass.join(' ');
-  // console.log(rank, suit);
+  // console.log(isOrigin);
   return (
     <div 
       className={cardClass} 

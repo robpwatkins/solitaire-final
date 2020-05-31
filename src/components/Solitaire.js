@@ -9,9 +9,8 @@ import Tableau from './Tableau';
 
 const Solitaire = (props) => {
   const [deck, setDeck] = useState([]);
-  // const [isOrigin, setIsOrigin] = useState(false);
   const [originCard, setOriginCard] = useState(null);
-  const playCards = useRef([]);
+  const [playCards, setPlayCards] = useState(null);
 
   useEffect(() => {
     setDeck(deck => deck = deckBuilder());
@@ -42,18 +41,82 @@ const Solitaire = (props) => {
   // console.log(originCard);
   return (
     <div className="solitaire">
-      <Stock count={24} deck={deck} />
-      <Foundation playCards={playCards} handleClick={handleClick} />
-      <Foundation playCards={playCards} handleClick={handleClick} />
-      <Foundation playCards={playCards} handleClick={handleClick} />
-      <Foundation playCards={playCards} handleClick={handleClick} />
-      <Tableau count={1} deck={deck} playCards={playCards} handleClick={handleClick} />
-      <Tableau count={2} deck={deck} playCards={playCards} handleClick={handleClick} />
-      <Tableau count={3} deck={deck} playCards={playCards} handleClick={handleClick} />
-      <Tableau count={4} deck={deck} playCards={playCards} handleClick={handleClick} />
-      <Tableau count={5} deck={deck} playCards={playCards} handleClick={handleClick} />
-      <Tableau count={6} deck={deck} playCards={playCards} handleClick={handleClick} />
-      <Tableau count={7} deck={deck} playCards={playCards} handleClick={handleClick} />
+      <Stock 
+        count={24} 
+        deck={deck} 
+        playCards={playCards} 
+        setPlayCards={setPlayCards} 
+        handleClick={handleClick} 
+      />
+      <Foundation 
+        playCards={playCards} 
+        setPlayCards={setPlayCards} 
+        handleClick={handleClick} 
+      />
+      <Foundation 
+        playCards={playCards} 
+        setPlayCards={setPlayCards} 
+        handleClick={handleClick} 
+      />
+      <Foundation 
+        playCards={playCards} 
+        setPlayCards={setPlayCards} 
+        handleClick={handleClick} 
+      />
+      <Foundation 
+        playCards={playCards} 
+        setPlayCards={setPlayCards} 
+        handleClick={handleClick} 
+      />
+      <Tableau 
+        count={1} 
+        deck={deck} 
+        playCards={playCards} 
+        setPlayCards={setPlayCards} 
+        handleClick={handleClick} 
+      />
+      <Tableau 
+        count={2} 
+        deck={deck} 
+        playCards={playCards} 
+        setPlayCards={setPlayCards} 
+        handleClick={handleClick} 
+      />
+      <Tableau 
+        count={3} 
+        deck={deck} 
+        playCards={playCards} 
+        setPlayCards={setPlayCards} 
+        handleClick={handleClick} 
+      />
+      <Tableau 
+        count={4} 
+        deck={deck} 
+        playCards={playCards} 
+        setPlayCards={setPlayCards} 
+        handleClick={handleClick} 
+      />
+      <Tableau 
+        count={5} 
+        deck={deck} 
+        playCards={playCards} 
+        setPlayCards={setPlayCards} 
+        handleClick={handleClick} 
+      />
+      <Tableau 
+        count={6} 
+        deck={deck} 
+        playCards={playCards} 
+        setPlayCards={setPlayCards} 
+        handleClick={handleClick} 
+      />
+      <Tableau 
+        count={7} 
+        deck={deck} 
+        playCards={playCards} 
+        setPlayCards={setPlayCards} 
+        handleClick={handleClick} 
+      />
     </div>
   )
 }

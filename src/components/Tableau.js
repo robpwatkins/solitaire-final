@@ -6,7 +6,8 @@ import Stack from './Stack';
 const Tableau = (props) => {
   const [cards, setCards] = useState([]);
   const [cardPosition, setCardPosition] = useState(null);
-  const { count, deck, playCards } = props;
+  const [isOrigin, setIsOrigin] = useState(false);
+  const { count, deck, playCards, setPlayCards } = props;
   
   useEffect(() => {
     setCards(dealCards(count, deck));
@@ -14,9 +15,11 @@ const Tableau = (props) => {
   }, [count, deck, cards.length])
 
   const handleClick = () => {
-    // if (playCards.current.length > 0 && cards.length === 0) {
-    //   playCards.current = [];
-    // }
+    if (!isOrigin) {
+      setIsOrigin(true);
+    } else {
+      setIsOrigin(false);
+    }
   }
 
   // console.log(cards, cardPosition);
@@ -31,7 +34,9 @@ const Tableau = (props) => {
               index={index}
               name={index === cardPosition ? "tableau top" : index > cardPosition && "tableau bottom"}
               handleClick={props.handleClick}
+              isOrigin={isOrigin}
               playCards={playCards}
+              setPlayCards={setPlayCards}
               cards={cards}
             />
           )
