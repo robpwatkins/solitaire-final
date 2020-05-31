@@ -6,9 +6,6 @@ const Foundation = (props) => {
 
   const handleClick = event => {
     props.handleClick(event);
-    if (playCards.current.length > 0) {
-      playCards.current = [];
-    }
   }
 
   let fndClass = [

@@ -32,8 +32,10 @@ const Solitaire = (props) => {
       console.log(originCard, destinationCard);
       if (solitaire(destination, originCard, destinationCard)) {
         console.log('heyoo');
+        setOriginCard(originCard => originCard = null);
       } else {
         console.log('narp');
+        setOriginCard(originCard => originCard = null);
       }
     }
   }
