@@ -35,6 +35,7 @@ const Tableau = (props) => {
               name={index === cardPosition ? "tableau top" : index > cardPosition && "tableau bottom"}
               handleClick={props.handleClick}
               isOrigin={isOrigin}
+              setIsOrigin={setIsOrigin}
               playCards={playCards}
               setPlayCards={setPlayCards}
               cards={cards}

@@ -9,15 +9,15 @@ import Tableau from './Tableau';
 
 const Solitaire = (props) => {
   const [deck, setDeck] = useState([]);
-  const [originCard, setOriginCard] = useState(null);
-  const [playCards, setPlayCards] = useState(null);
+  const [originCard, setOriginCard] = useState([]);
+  const [playCards, setPlayCards] = useState([]);
 
   useEffect(() => {
     setDeck(deck => deck = deckBuilder());
   }, [])
 
   const handleClick = event => {
-    if (!originCard) {
+    if (originCard.length === 0) {
       setOriginCard({
         rank: setRank(event.currentTarget.dataset.rank),
         suit: event.currentTarget.dataset.suit
@@ -28,17 +28,18 @@ const Solitaire = (props) => {
         rank: setRank(event.currentTarget.dataset.rank),
         suit: event.currentTarget.dataset.suit
       }
-      console.log(originCard, destinationCard);
+      // console.log(originCard, destinationCard);
       if (solitaire(destination, originCard, destinationCard)) {
         console.log('heyoo');
-        setOriginCard(originCard => originCard = null);
+        setOriginCard(originCard => originCard = []);
       } else {
         console.log('narp');
-        setOriginCard(originCard => originCard = null);
+        setOriginCard(originCard => originCard = []);
+        setPlayCards([]);
       }
     }
   }
-  // console.log(originCard);
+  console.log(playCards);
   return (
     <div className="solitaire">
       <Stock 

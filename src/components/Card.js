@@ -11,12 +11,19 @@ const Card = (props) => {
     index,
     name,
     cards,
+    isOrigin,
+    setIsOrigin,
     playCards,
     setPlayCards
   } = props;
 
   const handleClick = event => {
     props.handleClick(event);
+    if (!isOrigin && playCards.length === 0) {
+      setIsOrigin(true);
+      let newCards = cards.slice();
+      setPlayCards(newCards.splice(index));
+    }
   }
 
   let cardClass = [
