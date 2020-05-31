@@ -16,12 +16,12 @@ const Card = (props) => {
 
   const handleClick = (event) => {
     props.handleClick(event);
-    if (playCards.current.length === 0) {
-      let newCards = cards.slice();
-        playCards.current = newCards.splice(index);
-    } else {
-      playCards.current = [];
-    }
+    // if (playCards.current.length === 0) {
+    //   let newCards = cards.slice();
+    //     playCards.current = newCards.splice(index);
+    // } else {
+    //   playCards.current = [];
+    // }
   }
 
   let cardClass = [

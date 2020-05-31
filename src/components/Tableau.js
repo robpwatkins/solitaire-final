@@ -13,11 +13,10 @@ const Tableau = (props) => {
     setCardPosition(cards.length - 1)
   }, [count, deck, cards.length])
 
-  const handleClick = event => {
-    props.handleClick(event);
-    if (playCards.current.length > 0) {
-      playCards.current = [];
-    }
+  const handleClick = () => {
+    // if (playCards.current.length > 0 && cards.length === 0) {
+    //   playCards.current = [];
+    // }
   }
 
   // console.log(cards, cardPosition);

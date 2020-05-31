@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { deckBuilder } from '../deckBuilder';
 import { solitaire } from '../solitaire';
 import { setDestination } from '../setDestination';
+import { setRank } from '../setRank';
 import Stock from './Stock';
 import Foundation from './Foundation';
 import Tableau from './Tableau';
@@ -9,6 +10,7 @@ import Tableau from './Tableau';
 const Solitaire = (props) => {
   const [deck, setDeck] = useState([]);
   // const [isOrigin, setIsOrigin] = useState(false);
+  const [originCard, setOriginCard] = useState(null);
   const playCards = useRef([]);
 
   useEffect(() => {
@@ -16,13 +18,18 @@ const Solitaire = (props) => {
   }, [])
 
   const handleClick = event => {
-    if (playCards.current.length > 0) {
+    if (!originCard) {
+      setOriginCard({
+        rank: setRank(event.currentTarget.dataset.rank),
+        suit: event.currentTarget.dataset.suit
+      });
+    } else {
       let destination = setDestination(event.currentTarget.getAttribute('class'));
-      let originCard = playCards.current[0];
       let destinationCard = {
-        rank: event.currentTarget.dataset.rank,
+        rank: setRank(event.currentTarget.dataset.rank),
         suit: event.currentTarget.dataset.suit
       }
+      console.log(originCard, destinationCard);
       if (solitaire(destination, originCard, destinationCard)) {
         console.log('heyoo');
       } else {
@@ -30,7 +37,7 @@ const Solitaire = (props) => {
       }
     }
   }
-  // console.log(playCards.current);
+  // console.log(originCard);
   return (
     <div className="solitaire">
       <Stock count={24} deck={deck} />
