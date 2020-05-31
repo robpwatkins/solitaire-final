@@ -20,7 +20,9 @@ const Card = (props) => {
     if (playCards.current.length === 0) {
       let newCards = cards.slice();
         playCards.current = newCards.splice(index);
-    } else return;
+    } else {
+      playCards.current = [];
+    }
   }
 
   // const handleClick = (event, data) => {

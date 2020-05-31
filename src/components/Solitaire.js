@@ -37,7 +37,13 @@ const Solitaire = (props) => {
         rank: event.currentTarget.dataset.rank,
         suit: event.currentTarget.dataset.suit
       }
-      console.log(solitaire(destination, originCard, destinationCard));
+      if (solitaire(destination, originCard, destinationCard)) {
+        console.log('heyoo');
+        // playCards.current = [];
+      } else {
+        console.log('narp');
+        // playCards.current = [];
+      }
     }
   }
   // console.log(playCards.current);
