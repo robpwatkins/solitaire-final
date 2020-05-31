@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const Foundation = () => {
-  const [cards, setCards] = useState([]);
+  const [cards, /* setCards */] = useState([]);
 
   let fndClass = [
     'foundation',
