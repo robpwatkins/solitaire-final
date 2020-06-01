@@ -17,6 +17,7 @@ const Solitaire = (props) => {
   }, [])
 
   const handleClick = event => {
+    console.log(event.currentTarget.getAttribute('class'))
     if (originCard.length === 0) {
       setOriginCard({
         rank: setRank(event.currentTarget.dataset.rank),
@@ -39,7 +40,7 @@ const Solitaire = (props) => {
       }
     }
   }
-  console.log(playCards);
+  // console.log(playCards);
   return (
     <div className="solitaire">
       <Stock 

@@ -96,9 +96,6 @@ img {
   color: #CD0000;
 }
 
-.origin {
-  box-shadow: 0 0 3px 7px #f9d90af5;
-}
 
 .waste {
   grid-column: 2 / 3;
@@ -161,4 +158,9 @@ img {
 
 .bottom:nth-child(1) {
   margin: 0;
+}
+
+
+.origin {
+  box-shadow: 0 0 3px 7px #f9d90af5;
 }

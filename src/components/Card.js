@@ -13,32 +13,40 @@ const Card = (props) => {
     cards,
     isOrigin,
     setIsOrigin,
+    setIsDestination,
     playCards,
-    setPlayCards
+    setPlayCards,
+    cardIndex,
+    setCardIndex
   } = props;
 
   const handleClick = event => {
     props.handleClick(event);
+    if (setCardIndex) {
+      setCardIndex(index);
+    }
     if (!isOrigin && playCards.length === 0) {
       setIsOrigin(true);
       let newCards = cards.slice();
       setPlayCards(newCards.splice(index));
+    } else
+    if (playCards.length > 0 && !isOrigin) {
+      setIsDestination(true);
     }
   }
-
   let cardClass = [
     'card',
     ((suit === 'Diamonds') || (suit === 'Hearts')) && 'red',
-    // (isOrigin && (index >= cardIndex)) && 'origin',
+    (isOrigin && (index >= cardIndex)) && 'origin',
     (name && name.includes('tableau')) && 'tableau',
     (name && name.includes('top')) && 'top',
     (name && name.includes('bottom')) && 'bottom'
   ];
   cardClass = cardClass.join(' ');
-  // console.log(isOrigin);
+  console.log(isOrigin, index, cardIndex);
   return (
     <div 
-      className={cardClass} 
+      className={cardClass}
       value={index} 
       onClick={handleClick}
       data-rank={rank}
