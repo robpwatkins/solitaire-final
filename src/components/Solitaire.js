@@ -25,6 +25,7 @@ const Solitaire = (props) => {
       });
     } else {
       let destination = setDestination(event.currentTarget.getAttribute('class'));
+      console.log(destination);
       let destinationCard = {
         rank: setRank(event.currentTarget.dataset.rank),
         suit: event.currentTarget.dataset.suit
@@ -41,7 +42,7 @@ const Solitaire = (props) => {
       }
     }
   }
-  console.log(currentMove, successfulMove);
+  // console.log(currentMove, successfulMove);
   return (
     <div className="solitaire">
       <Stock 

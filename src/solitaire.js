@@ -7,6 +7,7 @@ export const solitaire = (destination, originCard, destinationCard) => {
     } else return false;
   }
   if (destination === 'tableau-empty') {
+    console.log('heyoo');
     if (originCard.rank === 'K') {
       return true;
     } else return false;

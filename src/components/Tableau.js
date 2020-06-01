@@ -11,6 +11,7 @@ const Tableau = (props) => {
   const [isDestination, setIsDestination] = useState(false);
   const { 
     count, 
+    handleClick,
     deck, 
     currentMove, 
     setCurrentMove, 
@@ -21,7 +22,7 @@ const Tableau = (props) => {
   useEffect(() => {
     setCards(dealCards(count, deck));
     setCardPosition(cards.length - 1)
-  }, [count, deck, cards.length])
+  }, [count, deck])
 
   useEffect(() => {
     if (currentMove.length === 0 && isDestination) {
@@ -51,19 +52,19 @@ const Tableau = (props) => {
     }
   }, [currentMove.length, isOrigin, cardIndex, cardPosition, cards, isDestination, setSuccessfulMove, successfulMove, currentMove]);
 
-  const handleClick = () => {
+  // const handleClick = () => {
     // if (!isOrigin) {
     //   setIsOrigin(true);
     // } else {
     //   setIsOrigin(false);
     // }
-  }
+  // }
 
-  // console.log(cards, isOrigin, isDestination);
+  // console.log(cards);
   return (
     <div 
       className={cards.length > 0 ? "tableau" : "tableau empty"} 
-      onClick={handleClick}
+      onClick={cards.length === 0 ? handleClick : undefined}
     >
       {cards.length > 0 && (
         cards.map((card, index) => {
