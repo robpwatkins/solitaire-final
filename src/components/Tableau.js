@@ -24,7 +24,7 @@ const Tableau = (props) => {
     // }
   }
 
-  // console.log(cards, cardPosition);
+  console.log(cards, isOrigin, isDestination);
   return (
     <div 
       className={cards.length > 0 ? "tableau" : "tableau empty"} 
