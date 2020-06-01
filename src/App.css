@@ -140,6 +140,10 @@ img {
   box-shadow: 0px -3px 3px -3px #9c9c9c;
 }
 
+.origin {
+  box-shadow: 0 0 3px 7px #f9d90af5;
+}
+
 .tableau:nth-child(4) {
   grid-column: 1 / 2;
 }
@@ -158,9 +162,4 @@ img {
 
 .bottom:nth-child(1) {
   margin: 0;
-}
-
-
-.origin {
-  box-shadow: 0 0 3px 7px #f9d90af5;
 }

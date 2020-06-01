@@ -43,7 +43,7 @@ const Card = (props) => {
     (name && name.includes('bottom')) && 'bottom'
   ];
   cardClass = cardClass.join(' ');
-  console.log(isOrigin, index, cardIndex);
+  // console.log(isOrigin, index, cardIndex);
   return (
     <div 
       className={cardClass}
