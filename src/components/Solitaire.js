@@ -10,7 +10,8 @@ import Tableau from './Tableau';
 const Solitaire = (props) => {
   const [deck, setDeck] = useState([]);
   const [originCard, setOriginCard] = useState([]);
-  const [playCards, setPlayCards] = useState([]);
+  const [currentMove, setCurrentMove] = useState([]);
+  const [successfulMove, setSuccessfulMove] = useState([]);
 
   useEffect(() => {
     setDeck(deck => deck = deckBuilder());
@@ -28,94 +29,119 @@ const Solitaire = (props) => {
         rank: setRank(event.currentTarget.dataset.rank),
         suit: event.currentTarget.dataset.suit
       }
-      // console.log(originCard, destinationCard);
       if (solitaire(destination, originCard, destinationCard)) {
-        console.log('heyoo', playCards);
+        console.log('heyoo');
+        setSuccessfulMove(successfulMove => successfulMove = currentMove);
         setOriginCard(originCard => originCard = []);
       } else {
         console.log('narp');
+        setCurrentMove(currentMove => currentMove = []);
         setOriginCard(originCard => originCard = []);
-        setPlayCards([]);
+        setCurrentMove([]);
       }
     }
   }
-  // console.log(playCards);
+  console.log(currentMove, successfulMove);
   return (
     <div className="solitaire">
       <Stock 
         count={24} 
         deck={deck} 
-        playCards={playCards} 
-        setPlayCards={setPlayCards} 
+        currentMove={currentMove} 
+        setCurrentMove={setCurrentMove}
+        successfulMove={successfulMove}
+        setSuccessfulMove={setSuccessfulMove} 
         handleClick={handleClick} 
       />
       <Foundation 
-        playCards={playCards} 
-        setPlayCards={setPlayCards} 
+        currentMove={currentMove} 
+        setCurrentMove={setCurrentMove}
+        successfulMove={successfulMove}
+        setSuccessfulMove={setSuccessfulMove} 
         handleClick={handleClick} 
       />
       <Foundation 
-        playCards={playCards} 
-        setPlayCards={setPlayCards} 
+        currentMove={currentMove} 
+        setCurrentMove={setCurrentMove}
+        successfulMove={successfulMove}
+        setSuccessfulMove={setSuccessfulMove} 
         handleClick={handleClick} 
       />
       <Foundation 
-        playCards={playCards} 
-        setPlayCards={setPlayCards} 
+        currentMove={currentMove} 
+        setCurrentMove={setCurrentMove}
+        successfulMove={successfulMove}
+        setSuccessfulMove={setSuccessfulMove} 
         handleClick={handleClick} 
       />
       <Foundation 
-        playCards={playCards} 
-        setPlayCards={setPlayCards} 
+        currentMove={currentMove} 
+        setCurrentMove={setCurrentMove}
+        successfulMove={successfulMove}
+        setSuccessfulMove={setSuccessfulMove} 
         handleClick={handleClick} 
       />
       <Tableau 
         count={1} 
         deck={deck} 
-        playCards={playCards} 
-        setPlayCards={setPlayCards} 
+        currentMove={currentMove} 
+        setCurrentMove={setCurrentMove}
+        successfulMove={successfulMove}
+        setSuccessfulMove={setSuccessfulMove} 
         handleClick={handleClick} 
       />
       <Tableau 
         count={2} 
         deck={deck} 
-        playCards={playCards} 
-        setPlayCards={setPlayCards} 
+        currentMove={currentMove} 
+        setCurrentMove={setCurrentMove}
+        successfulMove={successfulMove}
+        setSuccessfulMove={setSuccessfulMove} 
         handleClick={handleClick} 
       />
       <Tableau 
         count={3} 
         deck={deck} 
-        playCards={playCards} 
-        setPlayCards={setPlayCards} 
+        currentMove={currentMove} 
+        setCurrentMove={setCurrentMove}
+        successfulMove={successfulMove}
+        setSuccessfulMove={setSuccessfulMove} 
         handleClick={handleClick} 
       />
       <Tableau 
         count={4} 
         deck={deck} 
-        playCards={playCards} 
-        setPlayCards={setPlayCards} 
+        currentMove={currentMove} 
+        setCurrentMove={setCurrentMove}
+        successfulMove={successfulMove}
+        setSuccessfulMove={setSuccessfulMove} 
         handleClick={handleClick} 
       />
       <Tableau 
         count={5} 
         deck={deck} 
-        playCards={playCards} 
-        setPlayCards={setPlayCards} 
+        currentMove={currentMove} 
+        setCurrentMove={setCurrentMove}
+        successfulMove={successfulMove}
+        setSuccessfulMove={setSuccessfulMove} 
         handleClick={handleClick} 
       />
       <Tableau 
         count={6} 
         deck={deck} 
-        playCards={playCards} 
-        setPlayCards={setPlayCards} 
+        currentMove={currentMove} 
+        setCurrentMove={setCurrentMove}
+        successfulMove={successfulMove}
+        setSuccessfulMove={setSuccessfulMove} 
         handleClick={handleClick} 
       />
       <Tableau 
         count={7} 
         deck={deck} 
-        playCards={playCards} 
-        setPlayCards={setPlayCards} 
+        currentMove={currentMove} 
+        setCurrentMove={setCurrentMove}
+        successfulMove={successfulMove}
+        setSuccessfulMove={setSuccessfulMove} 
         handleClick={handleClick} 
       />
     </div>

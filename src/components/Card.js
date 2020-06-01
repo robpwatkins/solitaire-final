@@ -14,8 +14,8 @@ const Card = (props) => {
     isOrigin,
     setIsOrigin,
     setIsDestination,
-    playCards,
-    setPlayCards,
+    currentMove,
+    setCurrentMove,
     cardIndex,
     setCardIndex
   } = props;
@@ -25,12 +25,12 @@ const Card = (props) => {
     if (setCardIndex) {
       setCardIndex(index);
     }
-    if (!isOrigin && playCards.length === 0) {
+    if (!isOrigin && currentMove.length === 0) {
       setIsOrigin(true);
       let newCards = cards.slice();
-      setPlayCards(newCards.splice(index));
+      setCurrentMove(newCards.splice(index));
     } else
-    if (playCards.length > 0 && !isOrigin) {
+    if (currentMove.length > 0 && !isOrigin) {
       setIsDestination(true);
     }
   }
