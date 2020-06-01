@@ -44,7 +44,7 @@ const Solitaire = (props) => {
   }
   // console.log(currentMove, successfulMove);
   return (
-    <div className="solitaire">
+    <div className="gameboard">
       <Stock 
         count={24} 
         deck={deck} 

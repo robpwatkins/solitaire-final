@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import Solitaire from './components/Solitaire';
+import Gameboard from './components/Gameboard';
 
 
 function App() {
   return (
     <div className="App">
-      <Solitaire />
+      <Gameboard />
     </div>
   );
 }

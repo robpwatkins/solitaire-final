@@ -11,7 +11,7 @@
   min-height: 100vh;
 }
 
-.solitaire {
+.gameboard {
   display: grid;
   width: 100vw;
   max-width: 1000px;
