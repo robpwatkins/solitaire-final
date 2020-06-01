@@ -17,7 +17,6 @@ const Solitaire = (props) => {
   }, [])
 
   const handleClick = event => {
-    console.log(event.currentTarget.getAttribute('class'))
     if (originCard.length === 0) {
       setOriginCard({
         rank: setRank(event.currentTarget.dataset.rank),
@@ -31,7 +30,7 @@ const Solitaire = (props) => {
       }
       // console.log(originCard, destinationCard);
       if (solitaire(destination, originCard, destinationCard)) {
-        console.log('heyoo');
+        console.log('heyoo', playCards);
         setOriginCard(originCard => originCard = []);
       } else {
         console.log('narp');
