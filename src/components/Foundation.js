@@ -59,7 +59,7 @@ const {
 
   let fndClass = [
     'foundation',
-    // isOrigin && 'origin',
+    isOrigin && 'origin',
     cards.length === 0 && 'empty'
   ]
   fndClass = fndClass.join(' ');
@@ -67,23 +67,19 @@ const {
   return (
     <div className={fndClass} onClick={handleClick}>
       {cards.length > 0 && (
-        cards.map((card, index) => {
-          return (
-            <Card 
-              {...cards[index]} 
-              key={index} 
-              name="foundation"
-              handleClick={props.handleClick} 
-              isOrigin={isOrigin}
-              setIsOrigin={setIsOrigin}
-              currentMove={currentMove}
-              setCurrentMove={setCurrentMove}
-              setIsDestination={setDestination}
-              cards={cards}
-            />
-          )
-        })
-      )}
+          <Card 
+            {...cards[cards.length - 1]} 
+            name="foundation"
+            handleClick={props.handleClick} 
+            isOrigin={isOrigin}
+            setIsOrigin={setIsOrigin}
+            currentMove={currentMove}
+            setCurrentMove={setCurrentMove}
+            setIsDestination={setDestination}
+            cards={cards}
+          />
+        )
+      }
     </div>
   )
 }
