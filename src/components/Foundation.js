@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Card from './Card';
+import { setDestination } from '../setDestination';
 
 const Foundation = (props) => {
   const [cards, setCards] = useState([]);
@@ -65,7 +66,17 @@ const {
       {cards.length > 0 && (
         cards.map((card, index) => {
           return (
-            <Card {...cards[index]} key={index} />
+            <Card 
+              {...cards[index]} 
+              key={index} 
+              handleClick={props.handleClick} 
+              isOrigin={isOrigin}
+              setIsOrigin={setIsOrigin}
+              currentMove={currentMove}
+              setCurrentMove={setCurrentMove}
+              setIsDestination={setDestination}
+              cards={cards}
+            />
           )
         })
       )}
