@@ -46,7 +46,9 @@ const {
   }, [currentMove.length, isOrigin, /* cardIndex */, /* cardPosition */, cards, isDestination, setSuccessfulMove, successfulMove, currentMove, setCurrentMove]);
 
   const handleClick = event => {
-    cards.length === 0 && props.handleClick(event);
+    if (cards.length === 0) {
+      props.handleClick(event);
+    } else return;
     console.log('heyoo');
     if (currentMove.length > 0) {
       setIsDestination(true);
