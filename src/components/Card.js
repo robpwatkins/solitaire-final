@@ -39,6 +39,7 @@ const Card = (props) => {
     ((suit === 'Diamonds') || (suit === 'Hearts')) && 'red',
     (isOrigin && (index >= cardIndex)) && 'origin',
     (name && name.includes('tableau')) && 'tableau',
+    (name && name.includes('foundation')) && 'foundation',
     (name && name.includes('top')) && 'top',
     (name && name.includes('bottom')) && 'bottom'
   ];

@@ -46,7 +46,8 @@ const {
   }, [currentMove.length, isOrigin, /* cardIndex */, /* cardPosition */, cards, isDestination, setSuccessfulMove, successfulMove, currentMove, setCurrentMove]);
 
   const handleClick = event => {
-    props.handleClick(event);
+    cards.length === 0 && props.handleClick(event);
+    console.log('heyoo');
     if (currentMove.length > 0) {
       setIsDestination(true);
     } else {
@@ -69,6 +70,7 @@ const {
             <Card 
               {...cards[index]} 
               key={index} 
+              name="foundation"
               handleClick={props.handleClick} 
               isOrigin={isOrigin}
               setIsOrigin={setIsOrigin}
