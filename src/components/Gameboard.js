@@ -33,7 +33,7 @@ const Solitaire = (props) => {
       if (solitaire(destination, originCard, destinationCard)) {
         console.log('heyoo');
         setSuccessfulMove(successfulMove => successfulMove = currentMove);
-        setOriginCard(originCard => originCard = []);
+        // setOriginCard(originCard => originCard = []);
       } else {
         console.log('narp');
         setCurrentMove(currentMove => currentMove = []);

@@ -38,6 +38,7 @@ const {
       // }
     } else
     if (successfulMove.length > 0 && isDestination) {
+      console.log('heyoo');
       setCards([...cards, ...successfulMove]);
       setSuccessfulMove(successfulMove => successfulMove = []);
       // setCardIndex(null);
@@ -49,7 +50,7 @@ const {
   const handleClick = event => {
     if (cards.length === 0) {
       props.handleClick(event);
-    } else return;
+    } 
     if (currentMove.length > 0) {
       setIsDestination(true);
     } else {
@@ -75,7 +76,7 @@ const {
             setIsOrigin={setIsOrigin}
             currentMove={currentMove}
             setCurrentMove={setCurrentMove}
-            setIsDestination={setDestination}
+            // setIsDestination={setDestination}
             cards={cards}
           />
         )
