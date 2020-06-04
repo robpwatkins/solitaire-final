@@ -52,11 +52,11 @@ const Tableau = (props) => {
   }, [currentMove.length, isOrigin, cardIndex, cardPosition, cards, isDestination, setSuccessfulMove, successfulMove, currentMove, setCurrentMove]);
 
   // const handleClick = () => {
-    // if (!isOrigin) {
-    //   setIsOrigin(true);
-    // } else {
-    //   setIsOrigin(false);
-    // }
+  //   if (!isOrigin) {
+  //     setIsOrigin(true);
+  //   } else {
+  //     setIsOrigin(false);
+  //   }
   // }
 
   // console.log(cards);

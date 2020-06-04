@@ -22,7 +22,6 @@ const Card = (props) => {
 
   const handleClick = event => {
     props.handleClick(event);
-    name.includes('tableau') && console.log('heyoo');
     if (setCardIndex) {
       setCardIndex(index);
     }
