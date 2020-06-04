@@ -29,11 +29,13 @@ const Card = (props) => {
       setIsOrigin(true);
       let newCards = cards.slice();
       setCurrentMove(newCards.splice(index));
-    } else
-    if (currentMove.length > 0 && !isOrigin) {
-      setIsDestination(true);
+    } else {
+      if (currentMove.length > 0 && !isOrigin) {
+        setIsDestination(true);
+      }
     }
   }
+
   let cardClass = [
     'card',
     ((suit === 'Diamonds') || (suit === 'Hearts')) && 'red',
