@@ -21,9 +21,10 @@ const Waste = (props) => {
   }, [setCards, talonCards, talonIsClicked, setTalonCards, setTalonIsClicked]);
 
   const handleClick = event => {
-    props.handleClick(event);
+    // props.handleClick(event);
     if (!isOrigin) {
       setIsOrigin(true);
+
     }
   }
 
@@ -40,6 +41,7 @@ const Waste = (props) => {
         <Card 
           name="waste" 
           {...cards[cards.length - 1]} 
+          handleClick={props.handleClick}
           // isOrigin={isOrigin}
         />
       }

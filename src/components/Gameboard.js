@@ -42,7 +42,7 @@ const Solitaire = (props) => {
       }
     }
   }
-  // console.log(currentMove);
+  console.log(originCard);
   return (
     <div className="gameboard">
       <Stock 

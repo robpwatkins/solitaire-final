@@ -21,7 +21,7 @@ const Card = (props) => {
   } = props;
 
   const handleClick = event => {
-    if (name.includes('foundation')) {
+    if (name.includes('foundation') || name.includes('waste')) {
       props.handleClick(event);
     };
     if (name.includes('tableau')) {
@@ -52,7 +52,7 @@ const Card = (props) => {
     (name && name.includes('bottom')) && 'bottom'
   ];
   cardClass = cardClass.join(' ');
-  console.log(isOrigin);
+  // console.log(isOrigin);
   return (
     <div 
       className={cardClass}
