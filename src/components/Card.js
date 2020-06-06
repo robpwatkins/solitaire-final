@@ -16,7 +16,7 @@ const Card = (props) => {
     setIsDestination,
     currentMove,
     setCurrentMove,
-    cardIndex,
+    // cardIndex,
     setCardIndex
   } = props;
 
@@ -24,6 +24,7 @@ const Card = (props) => {
     if (name.includes('tableau')) {
       props.handleClick(event);
       setCardIndex(index);
+      // console.log(currentMove);
       if (currentMove.length === 0) {
         setIsOrigin(true);
         let newCards = cards.slice();
@@ -48,7 +49,7 @@ const Card = (props) => {
     (name && name.includes('bottom')) && 'bottom'
   ];
   cardClass = cardClass.join(' ');
-  // console.log(isOrigin, index, cardIndex);
+  // console.log(isOrigin);
   return (
     <div 
       className={cardClass}

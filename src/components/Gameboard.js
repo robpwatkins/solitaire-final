@@ -19,7 +19,7 @@ const Solitaire = (props) => {
 
   const handleClick = event => {
     // console.log('Gameboard', event.currentTarget);
-    if (originCard.length === 0) {
+    if (currentMove.length === 0) {
       setOriginCard({
         rank: setRank(event.currentTarget.dataset.rank),
         suit: event.currentTarget.dataset.suit
@@ -43,7 +43,7 @@ const Solitaire = (props) => {
       }
     }
   }
-  // console.log(currentMove, originCard);
+  // console.log(currentMove);
   return (
     <div className="gameboard">
       <Stock 
