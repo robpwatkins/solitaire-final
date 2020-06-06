@@ -10,12 +10,12 @@ const Card = (props) => {
     suit,
     index,
     name,
-    // cards,
+    cards,
     isOrigin,
-    // setIsOrigin,
-    // setIsDestination,
-    // currentMove,
-    // setCurrentMove,
+    setIsOrigin,
+    setIsDestination,
+    currentMove,
+    setCurrentMove,
     cardIndex,
     setCardIndex
   } = props;
@@ -24,10 +24,16 @@ const Card = (props) => {
     if (name.includes('tableau')) {
       props.handleClick(event);
       setCardIndex(index);
-      if (props.currentMove.length === 0) {
-        props.setIsOrigin(true);
-        let newCards = props.cards.slice();
-        props.setCurrentMove(newCards.splice(index));
+      if (currentMove.length === 0) {
+        setIsOrigin(true);
+        let newCards = cards.slice();
+        setCurrentMove(newCards.splice(index));
+      } else 
+        if (!isOrigin) {
+        setIsDestination(true);
+      } else {
+        setIsOrigin(false);
+        setCurrentMove([]);
       }
     }
   }
@@ -35,7 +41,7 @@ const Card = (props) => {
   let cardClass = [
     'card',
     ((suit === 'Diamonds') || (suit === 'Hearts')) && 'red',
-    (isOrigin && (index >= cardIndex)) && 'origin',
+    // (isOrigin && (index >= cardIndex)) && 'origin',
     (name && name.includes('tableau')) && 'tableau',
     (name && name.includes('foundation')) && 'foundation',
     (name && name.includes('top')) && 'top',
