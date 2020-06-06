@@ -7,7 +7,14 @@ const Stock = (props) => {
   const [cards, setCards] = useState([]);
   const [talonIsClicked, setTalonIsClicked] = useState(false);
   const [flipCard, setFlipCard] = useState(null);
-  const { count, deck } = props;
+  const { 
+    count, 
+    deck, 
+    currentMove,
+    setCurrentMove,
+    successfulMove, 
+    setSuccessfulMove 
+  } = props;
 
   useEffect(() => {
     setCards(dealCards(count, deck));
@@ -26,6 +33,10 @@ const Stock = (props) => {
         setTalonCards={setCards} 
         setTalonIsClicked={setTalonIsClicked}
         handleClick={props.handleClick}
+        currentMove={currentMove}
+        setCurrentMove={setCurrentMove}
+        successfulMove={successfulMove}
+        setSuccessfulMove={setSuccessfulMove}
       />
     </>
   )

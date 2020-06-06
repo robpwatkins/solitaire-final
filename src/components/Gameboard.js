@@ -38,11 +38,10 @@ const Solitaire = (props) => {
         console.log('narp');
         setCurrentMove(currentMove => currentMove = []);
         // setOriginCard(originCard => originCard = []);
-        setCurrentMove([]);
       }
     }
   }
-  console.log(originCard);
+  // console.log(originCard);
   return (
     <div className="gameboard">
       <Stock 

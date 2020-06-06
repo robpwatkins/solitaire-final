@@ -8,7 +8,11 @@ const Waste = (props) => {
     talonIsClicked, 
     talonCards, 
     setTalonCards,
-    setTalonIsClicked
+    setTalonIsClicked,
+    currentMove,
+    setCurrentMove,
+    successfulMove,
+    setSuccessfulMove
   } = props;
 
   useEffect(() => {
@@ -20,11 +24,23 @@ const Waste = (props) => {
     }
   }, [setCards, talonCards, talonIsClicked, setTalonCards, setTalonIsClicked]);
 
+  useEffect(() => {
+    if (currentMove.length === 0 && isOrigin) {
+      setIsOrigin(false);
+    } 
+    if (successfulMove.length > 0 && isOrigin) {
+      let newCards = cards.slice();
+      newCards.splice(cards.length - 1);
+      setCards(cards => cards = newCards);
+    }
+  }, [currentMove, isOrigin, setIsOrigin, successfulMove, cards, setCards]);
+
   const handleClick = event => {
-    // props.handleClick(event);
     if (!isOrigin) {
       setIsOrigin(true);
-
+      setCurrentMove(currentMove => currentMove = [cards[cards.length - 1]]);
+    } else {
+      setIsOrigin(false);
     }
   }
 
