@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import Card from './Card';
-import { setDestination } from '../setDestination';
+// import { setDestination } from '../setDestination';
 
 const Foundation = (props) => {
   const [cards, setCards] = useState([]);
   const [isOrigin, setIsOrigin] = useState(false);
   const [isDestination, setIsDestination] = useState(false);
 const { 
-    playCards,
-    count, 
+    // playCards,
+    // count, 
     // handleClick,
-    deck, 
+    // deck, 
     currentMove, 
     setCurrentMove, 
     successfulMove,
@@ -45,7 +45,7 @@ const {
       setCurrentMove(currentMove => currentMove = []);
       setIsDestination(isDestination => isDestination = false);
     }
-  }, [currentMove.length, isOrigin, /* cardIndex */, /* cardPosition */, cards, isDestination, setSuccessfulMove, successfulMove, currentMove, setCurrentMove]);
+  }, [currentMove.length, isOrigin/* , cardIndex, */ /* cardPosition */, cards, isDestination, setSuccessfulMove, successfulMove, currentMove, setCurrentMove]);
 
   const handleClick = event => {
     if (cards.length === 0) {

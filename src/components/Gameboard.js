@@ -18,6 +18,7 @@ const Solitaire = (props) => {
   }, [])
 
   const handleClick = event => {
+    // console.log('Gameboard', event.currentTarget);
     if (originCard.length === 0) {
       setOriginCard({
         rank: setRank(event.currentTarget.dataset.rank),
