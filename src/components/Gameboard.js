@@ -18,7 +18,6 @@ const Solitaire = (props) => {
   }, [])
 
   const handleClick = event => {
-    // console.log('Gameboard', event.currentTarget);
     if (currentMove.length === 0) {
       setOriginCard({
         rank: setRank(event.currentTarget.dataset.rank),
@@ -26,7 +25,7 @@ const Solitaire = (props) => {
       });
     } else {
       let destination = setDestination(event.currentTarget.getAttribute('class'));
-      console.log(destination);
+      // console.log(event.currentTarget);
       let destinationCard = {
         rank: setRank(event.currentTarget.dataset.rank),
         suit: event.currentTarget.dataset.suit
@@ -38,7 +37,7 @@ const Solitaire = (props) => {
       } else {
         console.log('narp');
         setCurrentMove(currentMove => currentMove = []);
-        setOriginCard(originCard => originCard = []);
+        // setOriginCard(originCard => originCard = []);
         setCurrentMove([]);
       }
     }

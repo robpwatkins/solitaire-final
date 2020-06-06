@@ -16,11 +16,14 @@ const Card = (props) => {
     setIsDestination,
     currentMove,
     setCurrentMove,
-    // cardIndex,
+    cardIndex,
     setCardIndex
   } = props;
 
   const handleClick = event => {
+    if (name.includes('foundation')) {
+      props.handleClick(event);
+    };
     if (name.includes('tableau')) {
       props.handleClick(event);
       setCardIndex(index);
@@ -42,7 +45,7 @@ const Card = (props) => {
   let cardClass = [
     'card',
     ((suit === 'Diamonds') || (suit === 'Hearts')) && 'red',
-    // (isOrigin && (index >= cardIndex)) && 'origin',
+    (isOrigin && (index >= cardIndex)) && 'origin',
     (name && name.includes('tableau')) && 'tableau',
     (name && name.includes('foundation')) && 'foundation',
     (name && name.includes('top')) && 'top',
