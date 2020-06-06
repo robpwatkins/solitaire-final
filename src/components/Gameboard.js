@@ -25,23 +25,18 @@ const Solitaire = (props) => {
       });
     } else {
       let destination = setDestination(event.currentTarget.getAttribute('class'));
-      // console.log(event.currentTarget);
       let destinationCard = {
         rank: setRank(event.currentTarget.dataset.rank),
         suit: event.currentTarget.dataset.suit
       }
       if (solitaire(destination, originCard, destinationCard)) {
-        console.log('heyoo');
         setSuccessfulMove(successfulMove => successfulMove = currentMove);
-        // setOriginCard(originCard => originCard = []);
       } else {
-        console.log('narp');
         setCurrentMove(currentMove => currentMove = []);
-        // setOriginCard(originCard => originCard = []);
       }
     }
   }
-  // console.log(originCard);
+
   return (
     <div className="gameboard">
       <Stock 
@@ -50,7 +45,6 @@ const Solitaire = (props) => {
         currentMove={currentMove} 
         setCurrentMove={setCurrentMove}
         successfulMove={successfulMove}
-        setSuccessfulMove={setSuccessfulMove} 
         handleClick={handleClick} 
       />
       <Foundation 

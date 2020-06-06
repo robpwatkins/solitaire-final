@@ -2,20 +2,20 @@ import React, { useState, useEffect } from 'react';
 import Card from './Card';
 
 const Waste = (props) => {
-  // const [cards, setCards] = useState([]);
   const [isOrigin, setIsOrigin] = useState(false);
   const { 
-    // talonIsClicked, 
-    // talonCards, 
-    // setTalonCards,
-    // setTalonIsClicked,
     cards,
     setCards,
     currentMove,
     setCurrentMove,
     successfulMove,
-    // setSuccessfulMove
   } = props;
+
+  useEffect(() => {
+    if (isOrigin) {
+      setIsOrigin(false);
+    }
+  }, [cards]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     if (currentMove.length === 0 && isOrigin) {
@@ -51,7 +51,6 @@ const Waste = (props) => {
           name="waste" 
           {...cards[cards.length - 1]} 
           handleClick={props.handleClick}
-          // isOrigin={isOrigin}
         />
       }
     </div>

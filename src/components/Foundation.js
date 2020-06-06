@@ -1,16 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Card from './Card';
-// import { setDestination } from '../setDestination';
 
 const Foundation = (props) => {
   const [cards, setCards] = useState([]);
   const [isOrigin, setIsOrigin] = useState(false);
   const [isDestination, setIsDestination] = useState(false);
 const { 
-    // playCards,
-    // count, 
-    // handleClick,
-    // deck, 
     currentMove, 
     setCurrentMove, 
     successfulMove,
@@ -30,7 +25,6 @@ const {
       setCards(cards => cards = newCards);
       setSuccessfulMove(successfulMove => successfulMove = []);
       setIsOrigin(isOrigin => isOrigin = false);
-      // setCurrentMove(currentMove => currentMove = []);
     } else
     if (successfulMove.length > 0 && isDestination) {
       setCards([...cards, ...successfulMove]);
@@ -61,14 +55,12 @@ const {
     cards.length === 0 && 'empty'
   ]
   fndClass = fndClass.join(' ');
-  // console.log(cards);
   return (
     <div className={fndClass} onClick={handleClick}>
       {cards.length > 0 && (
           <Card 
             {...cards[cards.length - 1]} 
             name="foundation"
-            // handleClick={props.handleClick} 
             isOrigin={isOrigin}
             handleClick={props.handleClick}
           />

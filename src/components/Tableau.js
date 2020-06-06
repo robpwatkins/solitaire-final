@@ -11,7 +11,6 @@ const Tableau = (props) => {
   const [isDestination, setIsDestination] = useState(false);
   const { 
     count, 
-    // handleClick,
     deck, 
     currentMove, 
     setCurrentMove, 
@@ -35,9 +34,7 @@ const Tableau = (props) => {
       let newCards = cards.slice();
       newCards.splice(cardIndex);
       setCards(cards => cards = newCards);
-      // setSuccessfulMove(successfulMove => successfulMove = []);
       setIsOrigin(isOrigin => isOrigin = false);
-      // setCardIndex(null);
       if (cardIndex === cardPosition) {
         setCardPosition(cardPosition => cardPosition - 1)
       }
@@ -45,7 +42,6 @@ const Tableau = (props) => {
     if (successfulMove.length > 0 && isDestination) {
       setCards([...cards, ...successfulMove]);
       setSuccessfulMove(successfulMove => successfulMove = []);
-      // setCardIndex(null);
       setCurrentMove(currentMove => currentMove = []);
       setIsDestination(isDestination => isDestination = false);
     }
@@ -58,11 +54,9 @@ const Tableau = (props) => {
     };
   }
 
-  // console.log(count);
   return (
     <div 
       className={cards.length > 0 ? "tableau" : "tableau empty"} 
-      // onClick={cards.length === 0 ? props.handleClick : undefined}
       onClick={handleClick}
     >
       {cards.length > 0 && (

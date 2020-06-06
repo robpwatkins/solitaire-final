@@ -12,7 +12,6 @@ export const solitaire = (destination, originCard, destinationCard) => {
     } else return false;
   }
   if (destination === 'foundation') {
-    console.log(originCard.rank, destinationCard);
     if ((originCard.rank === 2 && destinationCard.rank === 'A') ||
         (originCard.rank === 'J' && destinationCard.rank === 10) ||
         (originCard.rank === 'Q' && destinationCard.rank === 'J') ||

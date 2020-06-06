@@ -2,9 +2,6 @@ import React from 'react';
 import Suit from './Suit';
 
 const Card = (props) => {
-  // const [isOrigin, setIsOrigin] = useState(false);
-  // const [originCard, setOriginCard] = useState([]);
-  // const [destinationCard, setDestinationCard] = useState(null);
   const {
     rank,
     suit,
@@ -27,7 +24,6 @@ const Card = (props) => {
     if (name.includes('tableau')) {
       props.handleClick(event);
       setCardIndex(index);
-      // console.log(currentMove);
       if (currentMove.length === 0) {
         setIsOrigin(true);
         let newCards = cards.slice();
@@ -52,7 +48,6 @@ const Card = (props) => {
     (name && name.includes('bottom')) && 'bottom'
   ];
   cardClass = cardClass.join(' ');
-  // console.log(isOrigin);
   return (
     <div 
       className={cardClass}

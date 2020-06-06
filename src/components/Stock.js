@@ -12,7 +12,6 @@ const Stock = (props) => {
     currentMove,
     setCurrentMove,
     successfulMove, 
-    // setSuccessfulMove 
   } = props;
 
   useEffect(() => {
@@ -31,7 +30,7 @@ const Stock = (props) => {
       setTalonCards(talonCards => talonCards = newTalonCards);
     }
   }
-  // console.log(talonCards, flipCard);
+
   return (
     <>
       <Talon handleClick={handleClick} cards={talonCards} />
