@@ -1,6 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-const Waste = () => {
+const Waste = ({ talonIsClicked }) => {
+
+  useEffect(() => {
+    if (talonIsClicked) {
+      console.log('heyoo');
+    }
+  })
+
   return (
     <div className="waste">
       

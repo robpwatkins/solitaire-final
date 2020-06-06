@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Talon = () => {
+const Talon = ({ handleClick }) => {
   return (
-    <div className="talon">
+    <div className="talon" onClick={handleClick}>
       
     </div>
   )
