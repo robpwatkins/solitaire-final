@@ -52,7 +52,7 @@ const Card = (props) => {
     (name && name.includes('bottom')) && 'bottom'
   ];
   cardClass = cardClass.join(' ');
-  // console.log(isOrigin);
+  console.log(isOrigin);
   return (
     <div 
       className={cardClass}

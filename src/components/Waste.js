@@ -27,13 +27,20 @@ const Waste = (props) => {
     }
   }
 
+  let wasteClass = [
+    'waste',
+    isOrigin && 'origin',
+    cards.length === 0 && 'empty'
+  ]
+  wasteClass = wasteClass.join(' ');
+
   return (
-    <div className="waste" onClick={handleClick}>
+    <div className={wasteClass} onClick={handleClick}>
       {cards.length > 0 &&
         <Card 
           name="waste" 
           {...cards[cards.length - 1]} 
-          isOrigin={isOrigin}
+          // isOrigin={isOrigin}
         />
       }
     </div>
