@@ -169,6 +169,8 @@ img {
 }
 
 .shooting {
-  transition: transform 0.5s ease;
-  transform: scale(2) translateX(100px) rotate(360deg);
+  position: relative;
+  transition: transform 1s ease;
+  transform: scale(2) translateX(350px) translateY(350px) rotate(720deg);
+  z-index: 2;
 }
