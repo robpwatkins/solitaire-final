@@ -6,6 +6,7 @@ import Waste from './Waste';
 const Stock = (props) => {
   const [cards, setCards] = useState([]);
   const [talonIsClicked, setTalonIsClicked] = useState(false);
+  const [flipCard, setFlipCard] = useState(null);
   const { count, deck } = props;
 
   useEffect(() => {
@@ -15,11 +16,17 @@ const Stock = (props) => {
   const handleClick = () => {
     setTalonIsClicked(true);
   }
-  // console.log(cards);
+  // console.log(cards, flipCard);
   return (
     <>
       <Talon handleClick={handleClick} />
-      <Waste talonIsClicked={talonIsClicked} />
+      <Waste 
+        talonIsClicked={talonIsClicked} 
+        talonCards={cards} 
+        setTalonCards={setCards} 
+        setTalonIsClicked={setTalonIsClicked}
+        handleClick={props.handleClick}
+      />
     </>
   )
 }
