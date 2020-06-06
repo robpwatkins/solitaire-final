@@ -2,15 +2,19 @@ import React, { useState, useEffect } from 'react';
 import Card from './Card';
 
 const Foundation = (props) => {
-  const [cards, setCards] = useState([]);
+  const [cards, setCards] = useState([{
+    rank: 'A',
+    suit: 'Diamonds'
+  }]);
   const [isOrigin, setIsOrigin] = useState(false);
   const [isDestination, setIsDestination] = useState(false);
-const { 
-    currentMove, 
-    setCurrentMove, 
-    successfulMove,
-    setSuccessfulMove 
-  } = props;
+  const [isShooting, setIsShooting] = useState(false);
+  const { 
+      currentMove, 
+      setCurrentMove, 
+      successfulMove,
+      setSuccessfulMove 
+    } = props;
 
   useEffect(() => {
     if (currentMove.length === 0 && isDestination) {
@@ -35,6 +39,7 @@ const {
   }, [currentMove.length, isOrigin, cards, isDestination, setSuccessfulMove, successfulMove, currentMove, setCurrentMove]);
 
   const handleClick = event => {
+    setIsShooting(true);
     cards.length === 0 && props.handleClick(event);
     if (currentMove.length === 0) {
       setIsOrigin(true);
@@ -63,6 +68,7 @@ const {
             name="foundation"
             isOrigin={isOrigin}
             handleClick={props.handleClick}
+            isShooting={isShooting}
           />
         )
       }

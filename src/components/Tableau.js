@@ -48,6 +48,7 @@ const Tableau = (props) => {
   }, [currentMove.length, isOrigin, cardIndex, cardPosition, cards, isDestination, setSuccessfulMove, successfulMove, currentMove, setCurrentMove]);
 
   const handleClick = event => {
+    console.log('heyoo');
     if (cards.length === 0 && currentMove.length > 0) {
       props.handleClick(event);
       setIsDestination(true);

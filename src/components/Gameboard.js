@@ -7,7 +7,7 @@ import Stock from './Stock';
 import Foundation from './Foundation';
 import Tableau from './Tableau';
 
-const Solitaire = (props) => {
+const Solitaire = () => {
   const [deck, setDeck] = useState([]);
   const [originCard, setOriginCard] = useState([]);
   const [currentMove, setCurrentMove] = useState([]);
