@@ -3,10 +3,7 @@ import Card from './Card';
 // import { setDestination } from '../setDestination';
 
 const Foundation = (props) => {
-  const [cards, setCards] = useState([{
-    rank: 'A',
-    suit: 'Diamonds'
-  }]);
+  const [cards, setCards] = useState([]);
   const [isOrigin, setIsOrigin] = useState(false);
   const [isDestination, setIsDestination] = useState(false);
 const { 

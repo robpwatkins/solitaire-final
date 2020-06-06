@@ -1,4 +1,5 @@
 export const setDestination = target => {
+  console.log(target);
   if ((target.includes('foundation')) && (target.includes('empty'))) {
     target = 'foundation-empty';
   } else {
