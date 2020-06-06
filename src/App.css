@@ -33,8 +33,12 @@
 }
 
 .talon-empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: #2bc272;
   border: 2px dashed #229b5b;
+  border-radius: 10px;
 }
 
 .loop {

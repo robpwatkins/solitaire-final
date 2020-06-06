@@ -22,11 +22,14 @@ const Stock = (props) => {
 
   const handleClick = () => {
     setTalonIsClicked(true);
+    if (cards.length === 0) {
+
+    }
   }
   // console.log(cards, flipCard);
   return (
     <>
-      <Talon handleClick={handleClick} />
+      <Talon handleClick={handleClick} cards={cards} />
       <Waste 
         talonIsClicked={talonIsClicked} 
         talonCards={cards} 

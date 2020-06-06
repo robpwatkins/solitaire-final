@@ -15,14 +15,14 @@ const Waste = (props) => {
     setSuccessfulMove
   } = props;
 
-  useEffect(() => {
-    if (talonIsClicked) {
-      let newTalonCards = talonCards.slice();
-      setCards(cards => cards = [...cards, newTalonCards.splice(newTalonCards.length - 1)[0]]);
-      setTalonCards(talonCards => talonCards = (newTalonCards));
-      setTalonIsClicked(false);
-    }
-  }, [setCards, talonCards, talonIsClicked, setTalonCards, setTalonIsClicked]);
+  // useEffect(() => {
+  //   if (talonIsClicked) {
+  //     let newTalonCards = talonCards.slice();
+  //     setCards(cards => cards = [...cards, newTalonCards.splice(newTalonCards.length - 1)[0]]);
+  //     setTalonCards(talonCards => talonCards = (newTalonCards));
+  //     setTalonIsClicked(false);
+  //   }
+  // }, [setCards, talonCards, talonIsClicked, setTalonCards, setTalonIsClicked]);
 
   useEffect(() => {
     if (currentMove.length === 0 && isOrigin) {
