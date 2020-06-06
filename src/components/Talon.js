@@ -3,7 +3,7 @@ import LoopIcon from '@material-ui/icons/Loop';
 
 const Talon = (props) => {
   const { cards } = props;
-  console.log(cards.length);
+  // console.log(cards.length);
   return (
     <div 
       className={cards.length > 0 ? "talon" : "talon-empty"} 

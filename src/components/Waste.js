@@ -2,27 +2,20 @@ import React, { useState, useEffect } from 'react';
 import Card from './Card';
 
 const Waste = (props) => {
-  const [cards, setCards] = useState([]);
+  // const [cards, setCards] = useState([]);
   const [isOrigin, setIsOrigin] = useState(false);
   const { 
-    talonIsClicked, 
-    talonCards, 
-    setTalonCards,
-    setTalonIsClicked,
+    // talonIsClicked, 
+    // talonCards, 
+    // setTalonCards,
+    // setTalonIsClicked,
+    cards,
+    setCards,
     currentMove,
     setCurrentMove,
     successfulMove,
-    setSuccessfulMove
+    // setSuccessfulMove
   } = props;
-
-  // useEffect(() => {
-  //   if (talonIsClicked) {
-  //     let newTalonCards = talonCards.slice();
-  //     setCards(cards => cards = [...cards, newTalonCards.splice(newTalonCards.length - 1)[0]]);
-  //     setTalonCards(talonCards => talonCards = (newTalonCards));
-  //     setTalonIsClicked(false);
-  //   }
-  // }, [setCards, talonCards, talonIsClicked, setTalonCards, setTalonIsClicked]);
 
   useEffect(() => {
     if (currentMove.length === 0 && isOrigin) {

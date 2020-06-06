@@ -4,42 +4,44 @@ import Talon from './Talon';
 import Waste from './Waste';
 
 const Stock = (props) => {
-  const [cards, setCards] = useState([]);
-  const [talonIsClicked, setTalonIsClicked] = useState(false);
-  const [flipCard, setFlipCard] = useState(null);
+  const [talonCards, setTalonCards] = useState([]);
+  const [wasteCards, setWasteCards] = useState([]);
   const { 
     count, 
     deck, 
     currentMove,
     setCurrentMove,
     successfulMove, 
-    setSuccessfulMove 
+    // setSuccessfulMove 
   } = props;
 
   useEffect(() => {
-    setCards(dealCards(count, deck));
+    setTalonCards(dealCards(count, deck));
   }, [deck, count]);
 
   const handleClick = () => {
-    setTalonIsClicked(true);
-    if (cards.length === 0) {
-
+    if (talonCards.length === 0) {
+      let newWasteCards = wasteCards.slice();
+      newWasteCards.reverse();
+      setTalonCards(talonCards => talonCards = newWasteCards);
+      setWasteCards(wasteCards => wasteCards = []);
+    } else {
+      let newTalonCards = talonCards.slice();
+      setWasteCards([...wasteCards, newTalonCards.splice(newTalonCards.length - 1, 1)[0]]);
+      setTalonCards(talonCards => talonCards = newTalonCards);
     }
   }
-  // console.log(cards, flipCard);
+  // console.log(talonCards, flipCard);
   return (
     <>
-      <Talon handleClick={handleClick} cards={cards} />
+      <Talon handleClick={handleClick} cards={talonCards} />
       <Waste 
-        talonIsClicked={talonIsClicked} 
-        talonCards={cards} 
-        setTalonCards={setCards} 
-        setTalonIsClicked={setTalonIsClicked}
+        cards={wasteCards}
+        setCards={setWasteCards}
         handleClick={props.handleClick}
         currentMove={currentMove}
         setCurrentMove={setCurrentMove}
         successfulMove={successfulMove}
-        setSuccessfulMove={setSuccessfulMove}
       />
     </>
   )
