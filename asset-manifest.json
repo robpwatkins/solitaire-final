@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/solitaire-final/static/css/main.68c8282f.chunk.css",
+    "main.js": "/solitaire-final/static/js/main.b8022e44.chunk.js",
+    "main.js.map": "/solitaire-final/static/js/main.b8022e44.chunk.js.map",
+    "runtime-main.js": "/solitaire-final/static/js/runtime-main.6b9266d8.js",
+    "runtime-main.js.map": "/solitaire-final/static/js/runtime-main.6b9266d8.js.map",
+    "static/js/2.ea3260f0.chunk.js": "/solitaire-final/static/js/2.ea3260f0.chunk.js",
+    "static/js/2.ea3260f0.chunk.js.map": "/solitaire-final/static/js/2.ea3260f0.chunk.js.map",
+    "index.html": "/solitaire-final/index.html",
+    "precache-manifest.c33c3c77400e58c5029598cb4f4959a2.js": "/solitaire-final/precache-manifest.c33c3c77400e58c5029598cb4f4959a2.js",
+    "service-worker.js": "/solitaire-final/service-worker.js",
+    "static/css/main.68c8282f.chunk.css.map": "/solitaire-final/static/css/main.68c8282f.chunk.css.map",
+    "static/js/2.ea3260f0.chunk.js.LICENSE.txt": "/solitaire-final/static/js/2.ea3260f0.chunk.js.LICENSE.txt",
+    "static/media/Clubs.png": "/solitaire-final/static/media/Clubs.a75b7c4d.png",
+    "static/media/Heartsss.png": "/solitaire-final/static/media/Heartsss.3109c053.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6b9266d8.js",
+    "static/js/2.ea3260f0.chunk.js",
+    "static/css/main.68c8282f.chunk.css",
+    "static/js/main.b8022e44.chunk.js"
+  ]
+}
