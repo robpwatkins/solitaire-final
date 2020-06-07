@@ -1,3 +1,8 @@
+:root {
+  --direction-x: 360px;
+  --direction-y: 360px;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -181,7 +186,92 @@ img {
 
 .foundation-win:nth-last-child(1) {
   transition: transform 2s ease;
-  transform: scale(2) translateX(350px) translateY(350px) rotate(720deg);
+  transition-delay: 2s;
+  transform: scale(2) translateX(-350px) translateY(650px) rotate(720deg);
+  z-index: 2;
+}
+
+.foundation-win:nth-last-child(2) {
+  transition: transform 2s ease;
+  transition-delay: 3s;
+  transform: scale(2) translateX(-550px) translateY(350px) rotate(720deg);
+  z-index: 2;
+}
+
+.foundation-win:nth-last-child(3) {
+  transition: transform 2s ease;
+  transition-delay: 4s;
+  transform: scale(2) translateX(-550px) translateY(150px) rotate(720deg);
+  z-index: 2;
+}
+
+.foundation-win:nth-last-child(4) {
+  transition: transform 2s ease;
+  transition-delay: 5s;
+  transform: scale(2) translateX(-550px) translateY(-50px) rotate(720deg);
+  z-index: 2;
+}
+
+.foundation-win:nth-last-child(5) {
+  transition: transform 2s ease;
+  transition-delay: 6s;
+  transform: scale(2) translateX(-550px) translateY(-250px) rotate(720deg);
+  z-index: 2;
+}
+
+.foundation-win:nth-last-child(6) {
+  transition: transform 2s ease;
+  transition-delay: 7s;
+  transform: scale(2) translateX(-550px) translateY(-450px) rotate(720deg);
+  z-index: 2;
+}
+
+.foundation-win:nth-last-child(7) {
+  transition: transform 2s ease;
+  transition-delay: 8s;
+  transform: scale(2) translateX(0px) translateY(-650px) rotate(720deg);
+  z-index: 2;
+}
+
+.foundation-win:nth-last-child(8) {
+  transition: transform 2s ease;
+  transition-delay: 9s;
+  transform: scale(2) translateX(250px) translateY(-250px) rotate(720deg);
+  z-index: 2;
+}
+
+.foundation-win:nth-last-child(9) {
+  transition: transform 2s ease;
+  transition-delay: 10s;
+  transform: scale(2) translateX(350px) translateY(-50px) rotate(720deg);
+  z-index: 2;
+}
+
+.foundation-win:nth-last-child(10) {
+  transition: transform 2s ease;
+  transition-delay: 11s;
+  transform: scale(2) translateX(350px) translateY(250px) rotate(720deg);
+  z-index: 2;
+}
+
+.foundation-win:nth-last-child(11) {
+  transition: transform 2s ease;
+  transition-delay: 12s;
+  transform: scale(2) translateX(350px) translateY(450px) rotate(720deg);
+  z-index: 2;
+}
+
+.foundation-win:nth-last-child(12) {
+  transition: transform 2s ease;
+  transition-delay: 13s;
+  transform: scale(2) translateX(350px) translateY(650px) rotate(720deg);
+  z-index: 2;
+}
+
+.foundation-win:nth-last-child(13) {
+  transition: transform 2s ease;
+  transition-delay: 14s;
+  transform: scale(2) translateX(350px) translateY(850px) rotate(720deg);
   z-index: 2;
 }
 

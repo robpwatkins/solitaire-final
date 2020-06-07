@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// import { dealCards } from '../dealCards';
+import { dealCards } from '../dealCards';
 import Card from './Card';
 import Stack from './Stack';
 
@@ -19,7 +19,7 @@ const Tableau = (props) => {
   } = props;
   
   useEffect(() => {
-    // setCards(dealCards(count, deck));
+    setCards(dealCards(count, deck));
   }, [count, deck])
 
   useEffect(() => {

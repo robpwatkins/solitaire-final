@@ -19,9 +19,9 @@ const Foundation = (props) => {
       hasBeenWon
     } = props;
 
-  useEffect(() => {
-    setCards(dealCards(13, deck));
-  }, [deck])
+  // useEffect(() => {
+  //   setCards(dealCards(13, deck));
+  // }, [deck])
 
   useEffect(() => {
     if (currentMove.length === 0 && isDestination) {
@@ -49,12 +49,12 @@ const Foundation = (props) => {
     if (cards.length === 13) {
       setFoundationComplete(foundationComplete => [...foundationComplete, 'complete']);
     }
-    if (hasBeenWon) {
-      setTimeout(() => {
-        shootCards();
-      }, 2000)
-    }
-  }, [setFoundationComplete, hasBeenWon, cards, cards.length, setCards])
+    // if (hasBeenWon) {
+    //   setTimeout(() => {
+    //     // shootCards();
+    //   }, 2000)
+    // }
+  }, [setFoundationComplete, /* hasBeenWon */, cards, cards.length, /* setCards */])
 
   const shootCards = () => {
     if (cards.length === 0) return;
@@ -88,14 +88,20 @@ const Foundation = (props) => {
   // console.log(cards);
   return (
     <div className={fndClass} onClick={handleClick}>
-      {hasBeenWon &&
+      {cards.length > 0 &&
         cards.map((card, index) => {
           return (
-            <Card key={index} name="foundation-win" {...cards[index]} />
+            <Card 
+              key={index} 
+              name={hasBeenWon ? "foundation-win" : "foundation"} 
+              {...cards[index]} 
+              isOrigin={isOrigin}
+              handleClick={props.handleClick}
+            />
           )
         })
       }
-      {(!hasBeenWon && cards.length > 0) && (
+      {/* {(!hasBeenWon && cards.length > 0) && (
           <Card 
             {...cards[cards.length - 1]} 
             name="foundation"
@@ -105,7 +111,7 @@ const Foundation = (props) => {
             hasBeenWon={hasBeenWon}
           />
         )
-      }
+      } */}
     </div>
   )
 }
