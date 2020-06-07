@@ -17,9 +17,9 @@
   display: grid;
   width: 100%;
   max-width: 1050px;
-  height: 100%;
+  height: auto;
   grid-template-columns: repeat(7, 1fr);
-  /* grid-template-rows: 190px; */
+  grid-template-rows: min-content;
   gap: 15px;
   padding: 35px 25px;
 }
