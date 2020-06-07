@@ -44,7 +44,7 @@ const Solitaire = () => {
       }
     }
   }
-  // console.log(foundationComplete);
+  // console.log(foundationComplete, hasBeenWon);
   return (
     <div className="gameboard">
       <Stock 
