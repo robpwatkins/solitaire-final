@@ -51,24 +51,24 @@ const Foundation = (props) => {
     }
   }, [cards.length, setFoundationComplete, cards]);
 
-  useEffect(() => {
-    if (hasBeenWon) {
-      shootCards();
-    }
-  }, [hasBeenWon])
+  // useEffect(() => {
+  //   if (hasBeenWon) {
+  //     shootCards();
+  //   }
+  // }, [hasBeenWon])
 
-  const shootCards = () => {
-    for (let i = cards.length; i > 0; i--) {
-      ((i) => {
-        setTimeout(() => {
-          let newCards = cards.slice();
-          newCards.reverse();
-          newCards.splice(i);
-          setCards(cards => cards = newCards);
-        }, 500*i)
-      })(i);
-    }
-  }
+  // const shootCards = () => {
+  //   for (let i = cards.length; i > 0; i--) {
+  //     ((i) => {
+  //       setTimeout(() => {
+  //         let newCards = cards.slice();
+  //         newCards.reverse();
+  //         newCards.splice(i);
+  //         setCards(cards => cards = newCards);
+  //       }, 500*i)
+  //     })(i);
+  //   }
+  // }
 
   const handleClick = event => {
     setIsShooting(true);
@@ -92,9 +92,17 @@ const Foundation = (props) => {
     cards.length === 0 && 'empty',
   ]
   fndClass = fndClass.join(' ');
+  // console.log(cards);
   return (
     <div className={fndClass} onClick={handleClick}>
-      {cards.length > 0 && (
+      {hasBeenWon &&
+        cards.map((card, index) => {
+          return (
+            <Card key={index} name="foundation-win" {...cards[index]} />
+          )
+        })
+      }
+      {(!hasBeenWon && cards.length > 0) && (
           <Card 
             {...cards[cards.length - 1]} 
             name="foundation"

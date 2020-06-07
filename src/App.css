@@ -170,8 +170,18 @@ img {
 
 .shooting {
   /* background: hotpink; */
+}
+
+.foundation-win {
   position: relative;
-  transition: transform 10s ease;
+  margin-top: -190px;
+  position: relative;
+  transition: transform 15s ease;
   transform: scale(2) translateX(350px) translateY(350px) rotate(720deg);
   z-index: 2;
+}
+
+.foundation-win:nth-child(1) {
+  position: relative;
+  margin: 0;
 }

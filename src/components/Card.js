@@ -48,7 +48,8 @@ const Card = (props) => {
     (name && name.includes('foundation')) && 'foundation',
     (name && name.includes('top')) && 'top',
     (name && name.includes('bottom')) && 'bottom',
-    hasBeenWon && 'shooting'
+    name === 'foundation-win' && 'foundation-win'
+    // hasBeenWon && 'shooting'
   ];
   cardClass = cardClass.join(' ');
   return (
