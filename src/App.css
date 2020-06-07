@@ -1,8 +1,3 @@
-:root {
-  --direction-x: 360px;
-  --direction-y: 360px;
-}
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -15,34 +10,36 @@
   background-color: #2bc272;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 
 .gameboard {
   display: grid;
   width: 100%;
-  /* max-width: 1000px; */
+  max-width: 1050px;
   height: 100%;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: 190px;
   gap: 15px;
   padding: 35px 25px;
-  overflow: hidden;
 }
 
 .talon {
   display: flex;
   grid-column: 1 / 2;
-  height: 190px;
+  height: 0;
+  padding-top: 142%;
   justify-content: center;
   align-items: center;
   background: #1b6ca8;
-  border: 7px solid white;
-  border-radius: 10px;
+  border-radius: 12px;
+  box-shadow: inset 0 0 0 8px white;
 }
 
 .talon-empty {
   display: flex;
-  height: 190px;
+  height: 0;
+  padding-top: 142%;
   justify-content: center;
   align-items: center;
   background: #2bc272;
@@ -117,9 +114,10 @@ img {
 
 
 .foundation {
-  height: 190px;
-  border-radius: 10px;
   position: relative;
+  height: 0;
+  padding-top: 142%;
+  border-radius: 10px;
   box-shadow: 0px 3px 3px -3px #9c9c9c;
 }
 
