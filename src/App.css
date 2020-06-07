@@ -39,7 +39,7 @@
 .talon-empty {
   display: flex;
   height: 0;
-  padding-top: 142%;
+  padding-top: 139%;
   justify-content: center;
   align-items: center;
   background: #2bc272;
@@ -56,8 +56,32 @@
 .card {
   display: flex;
   flex-direction: column;
+  position: relative;
   width: 100%;
-  height: 190px;
+  padding-top: 142%;
+  /* height: 190px; */
+  /* justify-content: space-between;
+  align-items: center;
+  padding: 7px 3px;
+  font-size: 21px;
+  color: black;
+  background: rgb(233, 233, 233);
+  background: whitesmoke;
+  border-radius: 9px;
+  -webkit-user-select: none;  
+  -moz-user-select: none;    
+  -ms-user-select: none;      
+  user-select: none;
+  z-index: 1; */
+}
+
+.card-face {
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
   padding: 7px 3px;
@@ -70,8 +94,7 @@
   -moz-user-select: none;    
   -ms-user-select: none;      
   user-select: none;
-  z-index: 1;
-}
+  z-index: 1;}
 
 .rank-top {
   display: flex;
@@ -108,15 +131,17 @@ img {
 
 .waste {
   grid-column: 2 / 3;
-  height: 190px;
+  height: 0;
+  /* padding-top: 139%; */
+  /* margin: -2px 0px -1px 0; */
   border-radius: 10px;
 }
-
 
 .foundation {
   position: relative;
   height: 0;
   padding-top: 142%;
+  /* margin: -1px; */
   border-radius: 10px;
   box-shadow: 0px 3px 3px -3px #9c9c9c;
 }
@@ -136,7 +161,8 @@ img {
 .stack {
   position: relative;
   width: 100%;
-  height: 190px;
+  /* height: 190px; */
+  padding-top: 142%;
   margin-top: -165px;
   background: #1b6ca8;
   border: 7px solid white;
@@ -152,13 +178,15 @@ img {
 
 .tableau {
   position: relative;
-  height: 190px;
+  /* height: 190px; */
   border-radius: 10px;
   box-shadow: 0px -3px 3px -3px #9c9c9c;
 }
 
 .empty {
   border: 2px dashed #229b5b;
+  height: 0;
+  padding-top: 139%;
   box-shadow: none;
 }
 

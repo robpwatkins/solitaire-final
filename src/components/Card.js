@@ -60,17 +60,19 @@ const Card = (props) => {
       data-rank={rank}
       data-suit={suit}
     >
-      <div className="rank-top">
-        <div className="rank-suit">
-          <span>{rank}</span>
-          <Suit suit={suit} name="lil" />
+      <div className="card-face">
+        <div className="rank-top">
+          <div className="rank-suit">
+            <span>{rank}</span>
+            <Suit suit={suit} name="lil" />
+          </div>
         </div>
-      </div>
-        <Suit suit={suit} />
-      <div className="rank-bottom">
-        <div className="rank-suit">
-          <span>{rank}</span>
-          <Suit suit={suit} name="lil" />
+          <Suit suit={suit} />
+        <div className="rank-bottom">
+          <div className="rank-suit">
+            <span>{rank}</span>
+            <Suit suit={suit} name="lil" />
+          </div>
         </div>
       </div>
     </div>

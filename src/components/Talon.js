@@ -10,7 +10,7 @@ const Talon = (props) => {
       onClick={props.handleClick}>
         {/* <div className="card-back"></div> */}
       {cards.length === 0 && (
-        <LoopIcon className="loop" style={{fontSize: "65px"}} />
+        <LoopIcon className="loop" style={{fontSize: "10%"}} />
       )}
       
     </div>
