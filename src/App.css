@@ -120,7 +120,6 @@ img {
   height: 190px;
   border-radius: 10px;
   position: relative;
-  /* margin-top: -191px; */
   box-shadow: 0px 3px 3px -3px #9c9c9c;
 }
 
@@ -128,12 +127,12 @@ img {
   grid-column: 4 / 5;
 }
 
-.foundation .top {
+.foundation .top, .foundation .bottom {
   margin-top: -191px;
 }
 
-.foundation .bottom {
-  margin-top: -191px;
+.foundation .bottom:nth-child(1) {
+  margin: 0;
 }
 
 .stack {
@@ -181,11 +180,11 @@ img {
   margin-top: -165px;
 }
 
-.bottom {
+.tableau .bottom {
   margin-top: -150px;
 }
 
-.bottom:nth-child(1) {
+.tableau .bottom:nth-child(1) {
   margin: 0;
 }
 
