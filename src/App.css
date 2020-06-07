@@ -8,13 +8,14 @@
   display: flex;
   justify-content: center;
   background-color: #2bc272;
+  width: 100vw;
   height: 100vh;
 }
 
 .gameboard {
   display: grid;
-  width: 100vw;
-  max-width: 1000px;
+  width: 100%;
+  /* max-width: 1000px; */
   height: 100%;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: 190px;
@@ -172,19 +173,14 @@ img {
   margin: 0;
 }
 
-.shooting {
-  /* background: hotpink; */
-}
-
 .foundation-win {
   position: relative;
   margin-top: -191px;
-  position: relative;
   box-shadow: 0px 3px 3px -3px #9c9c9c;
 }
 
 .foundation-win:nth-last-child(1) {
-  transition: transform 3s ease;
+  transition: transform 2s ease;
   transform: scale(2) translateX(350px) translateY(350px) rotate(720deg);
   z-index: 2;
 }

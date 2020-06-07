@@ -46,38 +46,23 @@ const Foundation = (props) => {
   }, [currentMove.length, isOrigin, cards, isDestination, setSuccessfulMove, successfulMove, currentMove, setCurrentMove]);
 
   useEffect(() => {
-    // if (cards.length === 13) {
-    //   setFoundationComplete(foundationComplete => [...foundationComplete, 'complete']);
-    // }
-  }, [cards.length, setFoundationComplete, cards]);
-
-  useEffect(() => {
     if (cards.length === 13) {
       setFoundationComplete(foundationComplete => [...foundationComplete, 'complete']);
     }
     if (hasBeenWon) {
       setTimeout(() => {
-        if (cards.length === 0) return;
-        let newCards = cards.slice();
-        newCards.pop();
-        setCards(cards => cards = newCards);
+        shootCards();
       }, 2000)
     }
   }, [setFoundationComplete, hasBeenWon, cards, cards.length, setCards])
 
-  // const shootCards = () => {
-    // for (let i = cards.length; i > 0; i--) {
-      // ((i) => {
-        // setTimeout(() => {
-          // let newCards = cards.slice();
-          // newCards.reverse();
-          // newCards.splice(i);
-          // setCards(cards => cards = newCards);
-        // }, 500*i)
-      // })(i);
-    // }
-  // }
-
+  const shootCards = () => {
+    if (cards.length === 0) return;
+    let newCards = cards.slice();
+    newCards.pop();
+    setCards(cards => cards = newCards);
+  }
+  
   const handleClick = event => {
     setIsShooting(true);
     cards.length === 0 && props.handleClick(event);
