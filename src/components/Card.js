@@ -15,7 +15,8 @@ const Card = (props) => {
     setCurrentMove,
     cardIndex,
     setCardIndex,
-    isShooting
+    isShooting,
+    hasBeenWon
   } = props;
 
   const handleClick = event => {
@@ -47,7 +48,7 @@ const Card = (props) => {
     (name && name.includes('foundation')) && 'foundation',
     (name && name.includes('top')) && 'top',
     (name && name.includes('bottom')) && 'bottom',
-    isShooting && 'shooting'
+    hasBeenWon && 'shooting'
   ];
   cardClass = cardClass.join(' ');
   return (

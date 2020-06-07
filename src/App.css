@@ -169,8 +169,9 @@ img {
 }
 
 .shooting {
+  /* background: hotpink; */
   position: relative;
-  transition: transform 1s ease;
+  transition: transform 10s ease;
   transform: scale(2) translateX(350px) translateY(350px) rotate(720deg);
   z-index: 2;
 }

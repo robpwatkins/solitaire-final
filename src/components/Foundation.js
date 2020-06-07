@@ -49,7 +49,6 @@ const Foundation = (props) => {
     if (cards.length === 13) {
       setFoundationComplete(foundationComplete => [...foundationComplete, 'complete']);
     }
-
   }, [cards.length, setFoundationComplete, cards]);
 
   useEffect(() => {
@@ -59,19 +58,14 @@ const Foundation = (props) => {
   }, [hasBeenWon])
 
   const shootCards = () => {
-    function delay(i) {
-      if (i === 0) return;
-      setTimeout(() => {
-        let newCards = cards.slice();
-        newCards.reverse();
-        newCards.splice(i);
-        setCards(cards => cards = newCards);
-      }, 500*i)
-    }
     for (let i = cards.length; i > 0; i--) {
-      if (i === 0) return;
       ((i) => {
-        delay(i)
+        setTimeout(() => {
+          let newCards = cards.slice();
+          newCards.reverse();
+          newCards.splice(i);
+          setCards(cards => cards = newCards);
+        }, 500*i)
       })(i);
     }
   }
@@ -95,7 +89,7 @@ const Foundation = (props) => {
   let fndClass = [
     'foundation',
     isOrigin && 'origin',
-    cards.length === 0 && 'empty'
+    cards.length === 0 && 'empty',
   ]
   fndClass = fndClass.join(' ');
   return (
@@ -107,6 +101,7 @@ const Foundation = (props) => {
             isOrigin={isOrigin}
             handleClick={props.handleClick}
             isShooting={isShooting}
+            hasBeenWon={hasBeenWon}
           />
         )
       }
