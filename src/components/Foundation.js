@@ -93,7 +93,10 @@ const Foundation = (props) => {
           return (
             <Card 
               key={index} 
-              name={hasBeenWon ? "foundation-win" : "foundation"} 
+              name={
+                hasBeenWon ? "foundation-win" : 
+                ((index < cards.length - 1 || index === 0) ? 
+                "foundation bottom" : "foundation top")} 
               {...cards[index]} 
               isOrigin={isOrigin}
               handleClick={props.handleClick}

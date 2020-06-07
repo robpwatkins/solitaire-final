@@ -119,10 +119,21 @@ img {
 .foundation {
   height: 190px;
   border-radius: 10px;
+  position: relative;
+  /* margin-top: -191px; */
+  box-shadow: 0px 3px 3px -3px #9c9c9c;
 }
 
 .foundation:nth-child(3) {
   grid-column: 4 / 5;
+}
+
+.foundation .top {
+  margin-top: -191px;
+}
+
+.foundation .bottom {
+  margin-top: -191px;
 }
 
 .stack {
