@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Card from './Card';
+import { dealCards } from '../dealCards';
+// import { gameWon } from '../gameWon';
 
 const Foundation = (props) => {
-  const [cards, setCards] = useState([{
-    rank: 'A',
-    suit: 'Diamonds'
-  }]);
+  const [cards, setCards] = useState([]);
   const [isOrigin, setIsOrigin] = useState(false);
   const [isDestination, setIsDestination] = useState(false);
   const [isShooting, setIsShooting] = useState(false);
@@ -13,8 +12,16 @@ const Foundation = (props) => {
       currentMove, 
       setCurrentMove, 
       successfulMove,
-      setSuccessfulMove 
+      setSuccessfulMove,
+      deck,
+      // foundationComplete,
+      setFoundationComplete,
+      hasBeenWon
     } = props;
+
+  useEffect(() => {
+    setCards(dealCards(13, deck));
+  }, [deck])
 
   useEffect(() => {
     if (currentMove.length === 0 && isDestination) {
@@ -37,6 +44,37 @@ const Foundation = (props) => {
       setIsDestination(isDestination => isDestination = false);
     }
   }, [currentMove.length, isOrigin, cards, isDestination, setSuccessfulMove, successfulMove, currentMove, setCurrentMove]);
+
+  useEffect(() => {
+    if (cards.length === 13) {
+      setFoundationComplete(foundationComplete => [...foundationComplete, 'complete']);
+    }
+
+  }, [cards.length, setFoundationComplete, cards]);
+
+  useEffect(() => {
+    if (hasBeenWon) {
+      shootCards();
+    }
+  }, [hasBeenWon])
+
+  const shootCards = () => {
+    function delay(i) {
+      if (i === 0) return;
+      setTimeout(() => {
+        let newCards = cards.slice();
+        newCards.reverse();
+        newCards.splice(i);
+        setCards(cards => cards = newCards);
+      }, 500*i)
+    }
+    for (let i = cards.length; i > 0; i--) {
+      if (i === 0) return;
+      ((i) => {
+        delay(i)
+      })(i);
+    }
+  }
 
   const handleClick = event => {
     setIsShooting(true);

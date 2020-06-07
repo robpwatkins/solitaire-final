@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { dealCards } from '../dealCards';
+// import { dealCards } from '../dealCards';
 import Talon from './Talon';
 import Waste from './Waste';
 
@@ -15,7 +15,7 @@ const Stock = (props) => {
   } = props;
 
   useEffect(() => {
-    setTalonCards(dealCards(count, deck));
+    // setTalonCards(dealCards(count, deck));
   }, [deck, count]);
 
   const handleClick = () => {

@@ -12,10 +12,18 @@ const Solitaire = () => {
   const [originCard, setOriginCard] = useState([]);
   const [currentMove, setCurrentMove] = useState([]);
   const [successfulMove, setSuccessfulMove] = useState([]);
+  const [foundationComplete, setFoundationComplete] = useState([]);
+  const [hasBeenWon, setHasBeenWon] = useState(false);
 
   useEffect(() => {
     setDeck(deck => deck = deckBuilder());
   }, [])
+
+  useEffect(() => {
+    if (foundationComplete.length === 4) {
+      setHasBeenWon(hasBeenWon => hasBeenWon = true);
+    }
+  }, [foundationComplete.length])
 
   const handleClick = event => {
     if (currentMove.length === 0) {
@@ -36,7 +44,7 @@ const Solitaire = () => {
       }
     }
   }
-
+  // console.log(foundationComplete);
   return (
     <div className="gameboard">
       <Stock 
@@ -53,6 +61,10 @@ const Solitaire = () => {
         successfulMove={successfulMove}
         setSuccessfulMove={setSuccessfulMove} 
         handleClick={handleClick} 
+        deck={deck}
+        foundationComplete={foundationComplete}
+        setFoundationComplete={setFoundationComplete}
+        hasBeenWon={hasBeenWon}
       />
       <Foundation 
         currentMove={currentMove} 
@@ -60,6 +72,10 @@ const Solitaire = () => {
         successfulMove={successfulMove}
         setSuccessfulMove={setSuccessfulMove} 
         handleClick={handleClick} 
+        deck={deck}
+        foundationComplete={foundationComplete}
+        setFoundationComplete={setFoundationComplete}
+        hasBeenWon={hasBeenWon}
       />
       <Foundation 
         currentMove={currentMove} 
@@ -67,6 +83,10 @@ const Solitaire = () => {
         successfulMove={successfulMove}
         setSuccessfulMove={setSuccessfulMove} 
         handleClick={handleClick} 
+        deck={deck}
+        foundationComplete={foundationComplete}
+        setFoundationComplete={setFoundationComplete}
+        hasBeenWon={hasBeenWon}
       />
       <Foundation 
         currentMove={currentMove} 
@@ -74,6 +94,10 @@ const Solitaire = () => {
         successfulMove={successfulMove}
         setSuccessfulMove={setSuccessfulMove} 
         handleClick={handleClick} 
+        deck={deck}
+        foundationComplete={foundationComplete}
+        setFoundationComplete={setFoundationComplete}
+        hasBeenWon={hasBeenWon}
       />
       <Tableau 
         count={1} 
