@@ -85,7 +85,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 7px 3px;
-  font-size: 21px;
+  font-size: 2vw;
   color: black;
   background: rgb(233, 233, 233);
   background: whitesmoke;
@@ -111,12 +111,12 @@
 }
 
 .lil {
-  width: 12px;
+  width: 45%;
   height: auto;
 }
 
-img {
-  height: 50px;
+.middle {
+  width: 40%;
 }
 
 .rank-bottom {
@@ -163,10 +163,10 @@ img {
   width: 100%;
   /* height: 190px; */
   padding-top: 142%;
-  margin-top: -165px;
+  margin-top: -135%;
   background: #1b6ca8;
-  border: 7px solid white;
-  border-radius: 10px;
+  border: 9px solid white;
+  border-radius: 12px;
   box-shadow: 0px -3px 3px -3px #9c9c9c;
   z-index: 1;
 }
@@ -203,11 +203,11 @@ img {
 }
 
 .top {
-  margin-top: -165px;
+  margin-top: -135%;
 }
 
 .tableau .bottom {
-  margin-top: -150px;
+  margin-top: -110%;
 }
 
 .tableau .bottom:nth-child(1) {
