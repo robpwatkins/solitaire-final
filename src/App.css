@@ -17,7 +17,7 @@
   display: grid;
   width: 100%;
   max-width: 1050px;
-  height: auto;
+  /* height: auto; */
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: min-content;
   gap: 15px;
@@ -131,10 +131,14 @@
 
 .waste {
   grid-column: 2 / 3;
-  /* height: 0; */
-  /* padding-top: 139%; */
+  height: 0;
+  padding-top: 142%;
   /* margin: -2px 0px -1px 0; */
   border-radius: 10px;
+}
+
+.waste .card {
+  margin-top: -142%;
 }
 
 .foundation {
@@ -328,6 +332,19 @@
   }
 }
 
+@media (max-width: 600px) {
+
+  .talon {
+    box-shadow: inset 0 0 0 5px white;
+    border-radius: 9px;
+  }
+  
+  .stack {
+    border: 5px solid white;
+    border-radius: 9px;
+  }
+}
+
 @media (max-width: 480px) {
   .rank-suit {
     align-items: flex-start;
@@ -337,5 +354,11 @@
   .rank-bottom .rank-suit {
     align-items: flex-end;
     padding-right: 3px;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  .App {
+    background: hotpink;
   }
 }
