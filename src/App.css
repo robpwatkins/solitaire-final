@@ -317,3 +317,25 @@
   position: relative;
   margin: 0;
 }
+
+@media (max-width: 768px) {
+  .lil {
+    display: none;
+  }
+
+  .card-face {
+    font-size: 3vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .rank-suit {
+    align-items: flex-start;
+    padding-left: 3px;
+  }
+  
+  .rank-bottom .rank-suit {
+    align-items: flex-end;
+    padding-right: 3px;
+  }
+}
