@@ -358,7 +358,7 @@
 }
 
 @media screen and (orientation: landscape) {
-  /* .App { */
-    /* background: hotpink; */
-  /* } */
+  .App {
+    background: hotpink;
+  }
 }
