@@ -358,7 +358,15 @@
 }
 
 @media screen and (orientation: landscape) {
-  .App {
-    background: hotpink;
+  .gameboard {
+    width: 120vh;
+  }
+
+  .lil {
+    display: none;
+  }
+
+  .card-face {
+    font-size: 3vh;
   }
 }
