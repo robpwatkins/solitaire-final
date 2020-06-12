@@ -318,6 +318,9 @@
 }
 
 @media (max-width: 480px) {
+  .card-face {
+    padding: 9%;
+  }
 }
 
 /* @media screen and (orientation: landscape) {
