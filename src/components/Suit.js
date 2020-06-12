@@ -9,14 +9,14 @@ const Suit = ({ suit, name }) => {
     <>
       {
         suit === 'Spades'
-        ? <img key="Spades" src={Spades} alt="" className={name === "lil" ? name : 'middle'} />
+        ? <img key="Spades" src={Spades} alt="" />
         : [
           suit === 'Clubs'
-          ? <img key="Clubs" src={Clubs} alt="" className={name === "lil" ? name : 'middle'} />
+          ? <img key="Clubs" src={Clubs} alt="" />
           : [
             suit === 'Diamonds'
-            ? <img key="Diamonds" src={Diamonds} alt="" className={name === "lil" ? name : 'middle'} />
-            : <img key="Hearts" src={Hearts} alt="" className={name === "lil" ? name : 'middle'} />
+            ? <img key="Diamonds" src={Diamonds} alt="" />
+            : <img key="Hearts" src={Hearts} alt="" />
           ]
         ]
       }

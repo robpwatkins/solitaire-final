@@ -62,17 +62,11 @@ const Card = (props) => {
     >
       <div className={((suit === 'Diamonds') || (suit === 'Hearts')) ? "card-face red" : "card-face"}>
         <div className="rank-top">
-          <div className="rank-suit">
-            <span>{rank}</span>
-            <Suit suit={suit} name="lil" />
-          </div>
+          <span>{rank}</span>
         </div>
           <Suit suit={suit} />
         <div className="rank-bottom">
-          <div className="rank-suit">
-            <span>{rank}</span>
-            <Suit suit={suit} name="lil" />
-          </div>
+          <span>{rank}</span>
         </div>
       </div>
     </div>

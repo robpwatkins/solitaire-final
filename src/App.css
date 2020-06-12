@@ -59,20 +59,6 @@
   position: relative;
   width: 100%;
   padding-top: 142%;
-  /* height: 190px; */
-  /* justify-content: space-between;
-  align-items: center;
-  padding: 7px 3px;
-  font-size: 21px;
-  color: black;
-  background: rgb(233, 233, 233);
-  background: whitesmoke;
-  border-radius: 9px;
-  -webkit-user-select: none;  
-  -moz-user-select: none;    
-  -ms-user-select: none;      
-  user-select: none;
-  z-index: 1; */
 }
 
 .card-face {
@@ -84,8 +70,9 @@
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  padding: 7px 3px;
-  font-size: 2vw;
+  padding: 6%;
+  /* padding: 7px; */
+  font-size: calc(12px + 1vw);
   color: black;
   background: rgb(233, 233, 233);
   background: whitesmoke;
@@ -103,20 +90,9 @@
   justify-content: flex-start;
 }
 
-.rank-suit {
-  display: flex;
-  width: 25px;
-  flex-direction: column;
-  align-items: center;
-}
-
-.lil {
-  width: 45%;
-  height: auto;
-}
-
-.middle {
+.card-face img {
   width: 40%;
+  height: auto;
 }
 
 .rank-bottom {
@@ -323,10 +299,6 @@
 }
 
 @media (max-width: 768px) {
-  .lil {
-    display: none;
-  }
-
   .card-face {
     font-size: 3vw;
   }
@@ -346,18 +318,9 @@
 }
 
 @media (max-width: 480px) {
-  .rank-suit {
-    align-items: flex-start;
-    padding-left: 3px;
-  }
-  
-  .rank-bottom .rank-suit {
-    align-items: flex-end;
-    padding-right: 3px;
-  }
 }
 
-@media screen and (orientation: landscape) {
+/* @media screen and (orientation: landscape) {
   .gameboard {
     width: 120vh;
   }
@@ -369,4 +332,4 @@
   .card-face {
     font-size: 3vh;
   }
-}
+} */
