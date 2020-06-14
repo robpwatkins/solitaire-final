@@ -72,7 +72,7 @@
   align-items: center;
   padding: 6%;
   /* padding: 7px; */
-  font-size: calc(12px + 1vw);
+  font-size: calc(3px + 2vh);
   color: black;
   background: rgb(233, 233, 233);
   background: whitesmoke;
@@ -144,7 +144,7 @@
   width: 100%;
   /* height: 190px; */
   padding-top: 142%;
-  margin-top: -135%;
+  margin-top: -139%;
   background: #1b6ca8;
   border: 9px solid white;
   border-radius: 12px;
@@ -185,11 +185,11 @@
 }
 
 .top {
-  margin-top: -135%;
+  margin-top: -139%;
 }
 
 .tableau .bottom {
-  margin-top: -115%;
+  margin-top: -121%;
 }
 
 .tableau .bottom:nth-child(1) {
@@ -300,7 +300,7 @@
 
 @media (max-width: 768px) {
   .card-face {
-    font-size: 3vw;
+    /* font-size: 3vw; */
   }
 }
 
@@ -323,7 +323,7 @@
   }
 }
 
-@media (max-height: 480px) {
+/* @media (max-height: 480px) {
   .talon {
     box-shadow: inset 0 0 0 5px white;
     border-radius: 9px;
@@ -349,7 +349,7 @@
   .origin {
     box-shadow: 0 0 2px 4px #f9d90af5;
   }
-}
+} */
 
 /* @media screen and (orientation: landscape) {
   .gameboard {
