@@ -15,7 +15,7 @@
 
 .gameboard {
   display: grid;
-  width: 100%;
+  width: 120vh;
   max-width: 1050px;
   /* height: auto; */
   grid-template-columns: repeat(7, 1fr);
@@ -189,7 +189,7 @@
 }
 
 .tableau .bottom {
-  margin-top: -110%;
+  margin-top: -115%;
 }
 
 .tableau .bottom:nth-child(1) {
@@ -351,7 +351,7 @@
   }
 }
 
-@media screen and (orientation: landscape) {
+/* @media screen and (orientation: landscape) {
   .gameboard {
     width: 120vh;
   }
@@ -363,4 +363,4 @@
   .card-face {
     font-size: 3vh;
   }
-}
+} */
